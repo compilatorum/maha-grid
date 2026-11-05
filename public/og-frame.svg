@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g stroke="#374151" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#0f172a" fill-opacity="0.85" stroke="url(#gold)" stroke-width="3"/>
+  <text x="110" y="150" fill="#f59e0b" font-family="monospace" font-size="24" font-weight="bold">🐍🪜 MAHA GRID // FARCASTER MINI APP &amp; PUBLIC GOOD</text>
+  <text x="110" y="240" fill="#ffffff" font-family="sans-serif" font-size="64" font-weight="bold">Governança Agêntica Phygital</text>
+  <text x="110" y="310" fill="#94a3b8" font-family="sans-serif" font-size="30">9 Ciclos • Simulação cadCAD/TokenSpice • Nodespace Berlim 2027</text>
+  <rect x="110" y="370" width="290" height="60" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+  <text x="135" y="408" fill="#fbbf24" font-family="monospace" font-size="22" font-weight="bold">🔨 Build in Public</text>
+  <rect x="430" y="370" width="310" height="60" rx="12" fill="#1e293b" stroke="#a855f7" stroke-width="2"/>
+  <text x="455" y="408" fill="#c084fc" font-family="monospace" font-size="22" font-weight="bold">🧩 Nodespace Summit</text>
+  <rect x="770" y="370" width="310" height="60" rx="12" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="795" y="408" fill="#34d399" font-family="monospace" font-size="22" font-weight="bold">💰 W3F • Flows • CEF</text>
+  <text x="110" y="510" fill="#64748b" font-family="monospace" font-size="20">fc:frame v2 • Soulbound Attestations (ERC-5192) • Polkadot OpenGov</text>
+</svg>

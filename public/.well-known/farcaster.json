@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjg4ODg4OCwidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAifQ",
+    "payload": "eyJkb21haW4iOiJtYWhhLWdyaWQudmVyY2VsLmFwcCJ9",
+    "signature": "MHgwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw"
+  },
+  "frame": {
+    "version": "1",
+    "name": "Maha Grid — 9 Ciclos",
+    "iconUrl": "https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/icon.svg",
+    "homeUrl": "https://compilatorum.github.io/maha-grid/",
+    "imageUrl": "https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg",
+    "buttonTitle": "🐍 Jogar Frame Diário (Maha Grid)",
+    "splashImageUrl": "https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/icon.svg",
+    "splashBackgroundColor": "#0b0f19",
+    "webhookUrl": "https://api.neynar.com/f/app/maha-grid/webhook"
+  }
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maha Grid — Farcaster Mini App, Governança Agêntica Phygital &amp; Grants OS</title>
+
+  <!-- Farcaster Mini App / Frame v2 Meta Tags (https://miniapps.farcaster.xyz/) -->
+  <meta property="og:title" content="Maha Grid — Jornada de 9 Ciclos (Farcaster Mini App)" />
+  <meta property="og:description" content="Governança Agêntica e Jogo Phygital em 9 Ciclos. Simulação cadCAD/TokenSpice, Nodespace Berlim 2027 e Soulbound Attestations." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg" />
+  <meta name="fc:frame" content='{"version":"next","imageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","button":{"title":"🐍 Jogar Frame Diário (Maha Grid)","action":{"type":"launch_frame","name":"Maha Grid — 9 Ciclos","url":"https://compilatorum.github.io/maha-grid/","splashImageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","splashBackgroundColor":"#0b0f19"}}}' />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: radial-gradient(circle at top right, #1e1b4b 0%, #0b0f19 45%, #050811 100%);
+      color: #f1f5f9;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .grid-board {
+      display: grid;
+      grid-template-columns: repeat(9, minmax(0, 1fr));
+      gap: 4px;
+    }
+    .cell-ladder {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.45));
+      border-color: #10b981 !important;
+    }
+    .cell-snake {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(185, 28, 28, 0.45));
+      border-color: #ef4444 !important;
+    }
+    .cell-active {
+      box-shadow: 0 0 14px #f59e0b;
+      border-color: #f59e0b !important;
+      transform: scale(1.04);
+      z-index: 10;
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-16">
+  <!-- Header -->
+  <header class="border-b border-slate-800/80 bg-slate-950/70 backdrop-blur sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-emerald-500 flex items-center justify-center text-xl font-bold shadow-lg">
+          🐍
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-xl font-extrabold tracking-tight text-white">MAHA GRID</h1>
+            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">fc:frame v2</span>
+            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">ERC-5192 SBT</span>
+          </div>
+          <p class="text-xs text-slate-400">Build-in-Public OS (Farcaster) • Nodespace Berlim 2027 • Grants &amp; Simulação cadCAD/TokenSpice</p>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
+          🃏 Cartas Desenhadas: <strong id="cardsCounter" class="text-amber-400">38 / 54</strong>
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
+          🛡️ Reputação SBT: <strong id="sbtScore" class="text-emerald-400">30.0</strong>
+        </span>
+        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
+          🏦 Tesouraria: <strong id="treasuryVal" class="text-cyan-400">1,148.5 DOT</strong>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 mt-6 space-y-8">
+    <!-- Top Banner: As 3 Frentes Paralelas -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/30">
+        <div class="text-xs font-mono text-amber-400 uppercase">Frente 1 • Construção Técnica &amp; Narrativa</div>
+        <h2 class="text-base font-bold text-white mt-1">🔨 Build-in-Public no Farcaster</h2>
+        <p class="text-xs text-slate-300 mt-1">Mini App criado via kit Neynar (<code class="text-amber-300">npx @neynar/create-farcaster-mini-app@latest</code>). Frame Diário, enquetes de design e prova de tração nos canais <code class="text-amber-300">/web3 /dao /gaming /build</code>.</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-purple-500/30">
+        <div class="text-xs font-mono text-purple-400 uppercase">Frente 2 • Coordenação Política &amp; Presencial</div>
+        <h2 class="text-base font-bold text-white mt-1">🏛️ Nodespace Web3 Summit (Berlim 2027)</h2>
+        <p class="text-xs text-slate-300 mt-1">Node de "Governança Agêntica e Jogos Phygital" (<code class="text-purple-300">contact@web3summit.com</code>), apostila multilíngue (PT/EN/DE), playtests físicos e SIP interativa.</p>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
+        <div class="text-xs font-mono text-emerald-400 uppercase">Frente 3 • Sustentabilidade &amp; Tokenização</div>
+        <h2 class="text-base font-bold text-white mt-1">💰 W3F, Polkadot OpenGov, Flows &amp; CEF</h2>
+        <p class="text-xs text-slate-300 mt-1">Simulações auditáveis em Python (cadCAD/TokenSpice) + Soulbound Token não-especulativo: <em>"Completei a Jornada de 9 Ciclos do Maha Grid"</em>.</p>
+      </div>
+    </section>
+
+    <!-- Main Interactive Grid: Left = 9x9 Playable Frame Diário | Right = Controls, Dilemma & Farcaster Cast OS -->
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <!-- Tabuleiro 9x9 (81 Casas / 9 Ciclos) -->
+      <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+          <div>
+            <h2 class="text-lg font-bold text-white">🎲 Tabuleiro Phygital Maha Grid (9 Ciclos / 81 Casas)</h2>
+            <p class="text-xs text-slate-400">Escadas (<span class="text-emerald-400 font-semibold">🪜 Coordenação</span>) elevam a coalizão • Serpentes (<span class="text-rose-400 font-semibold">🐍 Captura</span>) testam o Escudo Agêntico</p>
+          </div>
+          <div class="text-xs font-mono bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
+            Posição: <strong id="posBadge" class="text-amber-400">Casa 1</strong> (<span id="cycleBadge" class="text-emerald-400">Ciclo 1/9</span>)
+          </div>
+        </div>
+
+        <div id="boardContainer" class="grid-board select-none"></div>
+
+        <!-- Legenda Rápida -->
+        <div class="mt-4 pt-3 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] text-slate-300">
+          <div>🪜 <strong>04→16</strong>: Playtest Aberto</div>
+          <div>🪜 <strong>12→28</strong>: Auditoria cadCAD</div>
+          <div>🪜 <strong>21→42</strong>: Streaming Flows</div>
+          <div>🪜 <strong>33→53</strong>: Nodespace Berlim</div>
+          <div>🪜 <strong>48→67</strong>: Polkadot OpenGov</div>
+          <div>🪜 <strong>62→78</strong>: Coalizão Antifrágil</div>
+          <div class="text-rose-300">🐍 <strong>15→05</strong>: Kalindi (Mercenária)</div>
+          <div class="text-rose-300">🐍 <strong>29→11</strong>: Takshaka (Baleias)</div>
+          <div class="text-rose-300">🐍 <strong>44→25</strong>: Karkotaka (Apatia)</div>
+          <div class="text-rose-300">🐍 <strong>58→37</strong>: Vasuki (Drenagem)</div>
+          <div class="text-rose-300">🐍 <strong>71→49</strong>: Kaliya (Fork Hostil)</div>
+          <div class="text-rose-300">🐍 <strong>79→60</strong>: Shesha (Oráculo)</div>
+        </div>
+      </div>
+
+      <!-- Painel do Frame Diário & Diário de Bordo Farcaster -->
+      <div class="lg:col-span-5 space-y-5">
+        <!-- Controles do Frame Diário -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-4">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono uppercase tracking-wider text-amber-400">🎮 Farcaster Mini App • Frame Diário</span>
+            <span id="shieldStatus" class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">🛡️ Escudo Ativo (SBT ≥ 25)</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <button id="rollBtn" onclick="rollDiceTurn()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-lg transition">
+              🎲 Lançar Dado D6 (Avançar)
+            </button>
+            <button onclick="drawCardMechanic()" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-600 transition">
+              🃏 Puxar Carta de Dilema
+            </button>
+          </div>
+
+          <!-- Log de Evento Atual -->
+          <div id="turnLog" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 font-mono leading-relaxed min-h-[76px]">
+            Pronto para iniciar a Jornada de 9 Ciclos! Lance o dado D6 ou puxe uma carta do baralho phygital.
+          </div>
+
+          <!-- Enquete Comunitária Farcaster -->
+          <div class="p-3.5 rounded-xl bg-indigo-950/40 border border-indigo-500/30 space-y-2">
+            <div class="text-xs font-bold text-indigo-300">🗳️ Decisão de Design em Público (Farcaster Poll #04)</div>
+            <p class="text-xs text-slate-300">Qual nome oficial devemos dar à Serpente da Casa 58 (Drenagem de Tesouraria) para o baralho de Berlim?</p>
+            <div class="flex gap-2 pt-1">
+              <button onclick="voteSnakeName('Vasuki (-21 casas)')" class="flex-1 py-1.5 px-2 rounded-lg bg-indigo-600/40 hover:bg-indigo-600/70 border border-indigo-400/40 text-xs font-semibold">
+                🐍 Vasuki (78%)
+              </button>
+              <button onclick="voteSnakeName('Vritra (-15 casas)')" class="flex-1 py-1.5 px-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-xs font-semibold">
+                🐍 Vritra (22%)
+              </button>
+            </div>
+          </div>
+
+          <!-- Badge Soulbound (SBT) -->
+          <div id="sbtCard" class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-3">
+            <div>
+              <div class="text-xs font-bold text-white">🪙 SBT: "Completei a Jornada de 9 Ciclos do Maha Grid"</div>
+              <div id="sbtSubtext" class="text-[11px] text-slate-400">Alcance a Casa 81 para cunhar seu Soulbound Token (ERC-5192) não-especulativo.</div>
+            </div>
+            <button onclick="instantJump81()" class="shrink-0 px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-mono">
+              Simular Casa 81
+            </button>
+          </div>
+        </div>
+
+        <!-- Gerador de Cast (Diário de Bordo Farcaster) -->
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3">
+          <div class="flex items-center justify-between">
+            <h3 class="text-sm font-bold text-white">📢 Gerador de Cast — Diário de Bordo</h3>
+            <span class="text-[11px] font-mono text-purple-300">/web3 • /dao • /gaming • /build</span>
+          </div>
+          <textarea id="castComposer" rows="4" class="w-full rounded-xl bg-slate-950 border border-slate-800 p-3 text-xs text-slate-200 font-mono focus:outline-none focus:border-amber-500">🐍🪜 Diário de Bordo Maha Grid #Dia1: Configuramos o Farcaster Mini App + Simulação cadCAD/TokenSpice dos 9 Ciclos!
+Cartas desenhadas: 38/54 | Reputação SBT: 30.0 | Rumo ao Nodespace @web3summit Berlim!
+cc @web3foundation @polkadot @flows /build /dao /gaming</textarea>
+          <div class="flex gap-2">
+            <button onclick="copyCastText()" class="flex-1 py-2 px-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
+              📋 Copiar Cast para Warpcast
+            </button>
+            <button onclick="resetBoard()" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono">
+              Reiniciar
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simulação cadCAD / TokenSpice & Pipeline de Grants -->
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-base font-bold text-white">📊 Telemetria da Simulação cadCAD / TokenSpice</h3>
+          <span class="text-xs font-mono text-emerald-400">simulations/maha_grid_sim.py</span>
+        </div>
+        <p class="text-xs text-slate-300">Resultado auditável de 24 timesteps com 6 agentes (<code class="text-amber-300">Steward</code>, <code class="text-amber-300">Coalition Builder</code>, <code class="text-amber-300">Public Good Max</code> e <code class="text-rose-300">Opportunistic Naga</code>):</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-[11px] text-slate-400">Tesouraria Final</div>
+            <div class="text-sm font-bold text-cyan-400">1,458.55 DOT</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-[11px] text-slate-400">Gini de Reputação</div>
+            <div class="text-sm font-bold text-emerald-400">0.2016 (Baixo)</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-[11px] text-slate-400">Flows Stream Rate</div>
+            <div class="text-sm font-bold text-amber-400">37.0 / época</div>
+          </div>
+          <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+            <div class="text-[11px] text-slate-400">Tração Farcaster</div>
+            <div class="text-sm font-bold text-purple-400">100.0 / 100</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3">
+        <div class="flex items-center justify-between">
+          <h3 class="text-base font-bold text-white">💰 Pipeline de Sustentabilidade Financeira (Grants)</h3>
+          <span class="text-xs font-mono text-amber-400">Mês 3 Ready</span>
+        </div>
+        <div class="space-y-2 text-xs">
+          <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+            <span>🏦 <strong>Web3 Foundation &amp; Polkadot OpenGov</strong> (Simulação + Kit Berlim)</span>
+            <span class="font-mono text-emerald-400">grants/01-web3-foundation-polkadot.md</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+            <span>🌊 <strong>Flows / Nouns DAO</strong> (Streaming Contínuo para Builders CC0)</span>
+            <span class="font-mono text-emerald-400">grants/02-flows-nouns-and-clanker.md</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+            <span>🦄 <strong>Clanker Ecosystem Fund (CEF)</strong> (Reciclagem de Taxas Farcaster)</span>
+            <span class="font-mono text-emerald-400">grants/02-flows-nouns-and-clanker.md</span>
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">
+            <span>🏛️ <strong>Nodespace Web3 Summit Berlim</strong> (<code class="text-purple-300">contact@web3summit.com</code> + SIP)</span>
+            <span class="font-mono text-purple-400">nodespace-berlin/01-nodespace-playbook-and-sip.md</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const LADDERS = {
+      4: { dest: 16, name: "Aliança de Playtest Aberto" },
+      12: { dest: 28, name: "Auditoria Comunitária cadCAD" },
+      21: { dest: 42, name: "Streaming Contínuo via Flows/Nouns" },
+      33: { dest: 53, name: "Consenso Político Nodespace Berlim" },
+      48: { dest: 67, name: "Fundo de Bens Públicos Polkadot OpenGov" },
+      62: { dest: 78, name: "Coalizão Multi-Agêntica Antifrágil" }
+    };
+
+    const SNAKES = {
+      15: { dest: 5, name: "Serpente Kalindi (Proposta Mercenária)" },
+      29: { dest: 11, name: "Serpente Takshaka (Captura por Baleias)" },
+      44: { dest: 25, name: "Serpente Karkotaka (Fadiga de Votação)" },
+      58: { dest: 37, name: "Serpente Vasuki (Drenagem de Tesouraria)" },
+      71: { dest: 49, name: "Serpente Kaliya (Fork Hostil)" },
+      79: { dest: 60, name: "Serpente Shesha (Centralização de Oráculo)" }
+    };
+
+    const DILEMMAS = [
+      "Carta #39 [Ciclo 4]: Uma baleia propôs drenar 30% da tesouraria sem milestone auditável. Sua coalizão bloqueou via Conviction Voting! (+6.5 SBT, +18 DOT)",
+      "Carta #40 [Ciclo 6]: Sessão presencial no Nodespace Berlim validou nova regra de quórum híbrido humano-agente! (+8.0 SBT, +25 DOT)",
+      "Carta #41 [Ciclo 3]: Stream contínuo aprovado no Flows (Nouns DAO) pelo histórico consistente no Farcaster! (+5.5 SBT, +32 DOT)",
+      "Carta #42 [Ciclo 8]: Agente Copiloto detectou ataque Sybil antes da execução on-chain! (+9.0 SBT, +15 DOT)"
+    ];
+
+    let playerPos = 1;
+    let sbtRep = 30.0;
+    let treasury = 1148.5;
+    let cardsDrawn = 38;
+
+    function renderBoard() {
+      const container = document.getElementById("boardContainer");
+      container.innerHTML = "";
+      // Tabuleiro 9x9 estilo Boustrophedon (Serpentes e Escadas clássico do 81 no topo ao 1 na base)
+      for (let row = 8; row >= 0; row--) {
+        const isEvenRow = row % 2 === 0;
+        for (let col = 0; col < 9; col++) {
+          const actualCol = isEvenRow ? col : (8 - col);
+          const sq = row * 9 + actualCol + 1;
+          const cell = document.createElement("div");
+          let classes = "h-12 sm:h-14 rounded-lg border border-slate-800 bg-slate-950/80 p-1 flex flex-col justify-between text-[10px] font-mono transition relative ";
+          if (LADDERS[sq]) classes += "cell-ladder ";
+          if (SNAKES[sq]) classes += "cell-snake ";
+          if (sq === playerPos) classes += "cell-active ";
+
+          let icon = "";
+          if (LADDERS[sq]) icon = `🪜→${LADDERS[sq].dest}`;
+          else if (SNAKES[sq]) icon = `🐍→${SNAKES[sq].dest}`;
+          else if (sq === 81) icon = "🏆SBT";
+
+          cell.className = classes;
+          cell.innerHTML = `
+            <div class="flex justify-between items-center">
+              <span class="font-bold ${sq === playerPos ? 'text-amber-300' : 'text-slate-400'}">${sq}</span>
+              <span class="text-[9px]">${icon}</span>
+            </div>
+            <div class="text-right text-xs">${sq === playerPos ? '🧑‍🚀' : ''}</div>
+          `;
+          container.appendChild(cell);
+        }
+      }
+
+      const cycle = Math.floor((playerPos - 1) / 9) + 1;
+      document.getElementById("posBadge").textContent = `Casa ${playerPos}`;
+      document.getElementById("cycleBadge").textContent = `Ciclo ${cycle}/9`;
+      document.getElementById("sbtScore").textContent = sbtRep.toFixed(1);
+      document.getElementById("treasuryVal").textContent = `${treasury.toFixed(1)} DOT`;
+      document.getElementById("cardsCounter").textContent = `${cardsDrawn} / 54`;
+
+      const shieldEl = document.getElementById("shieldStatus");
+      if (sbtRep >= 25) {
+        shieldEl.textContent = "🛡️ Escudo Ativo (SBT ≥ 25)";
+        shieldEl.className = "text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40";
+      } else {
+        shieldEl.textContent = "⚠️ Escudo Fraco (SBT < 25)";
+        shieldEl.className = "text-xs font-mono px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 border border-rose-500/40";
+      }
+
+      updateCastComposer(cycle);
+    }
+
+    function updateCastComposer(cycle) {
+      const sbtTag = playerPos === 81 ? "✅ SBT 9 Ciclos Cunhado (ERC-5192)!" : `Casa ${playerPos}/81 (Ciclo ${cycle}/9)`;
+      document.getElementById("castComposer").value =
+        `🐍🪜 Diário de Bordo Maha Grid: ${sbtTag}\n` +
+        `🃏 Cartas: ${cardsDrawn}/54 | 🛡️ Reputação SBT: ${sbtRep.toFixed(1)} | 🏦 Tesouraria Simulada: ${treasury.toFixed(1)} DOT\n` +
+        `Construindo em público rumo ao Nodespace @web3summit Berlim! cc @web3foundation @polkadot @flows /build /dao /gaming`;
+    }
+
+    function rollDiceTurn() {
+      if (playerPos >= 81) {
+        document.getElementById("turnLog").textContent = "🏆 Você já completou os 9 Ciclos (Casa 81)! Clique em Reiniciar para uma nova jornada.";
+        return;
+      }
+      const d6 = Math.floor(Math.random() * 6) + 1;
+      let next = Math.min(81, playerPos + d6);
+      let msg = `🎲 Dado D6 = ${d6}! Avançou da Casa ${playerPos} para a Casa ${next}. `;
+
+      if (LADDERS[next]) {
+        const info = LADDERS[next];
+        msg += `🪜 ESCADA ATIVADA (${info.name})! Subiu direto para a Casa ${info.dest} (+15 SBT).`;
+        next = info.dest;
+        sbtRep += 15;
+        treasury += 24;
+      } else if (SNAKES[next]) {
+        const info = SNAKES[next];
+        if (sbtRep >= 25) {
+          msg += `🛡️ ESCUDO DE COALIZÃO! Neutralizou a ${info.name} na Casa ${next} usando 10 pontos de Reputação SBT!`;
+          sbtRep -= 10;
+        } else {
+          msg += `🐍 CAIU EM ${info.name}! Regrediu para a Casa ${info.dest} (-6 SBT).`;
+          next = info.dest;
+          sbtRep = Math.max(5, sbtRep - 6);
+        }
+      } else {
+        sbtRep += 2.5;
+        treasury += 8.5;
+      }
+
+      playerPos = next;
+      if (playerPos === 81) {
+        sbtRep += 50;
+        msg += " 🏆 PARABÉNS! Você alcançou a Casa 81 e cunhou o SBT 'Completei a Jornada de 9 Ciclos do Maha Grid'!";
+        document.getElementById("sbtSubtext").innerHTML = "<strong class='text-emerald-400'>✅ CUNHADO ON-CHAIN (Token #01 • ERC-5192 Soulbound)!</strong>";
+      }
+
+      document.getElementById("turnLog").textContent = msg;
+      renderBoard();
+    }
+
+    function drawCardMechanic() {
+      cardsDrawn = Math.min(54, cardsDrawn + 1);
+      const card = DILEMMAS[cardsDrawn % DILEMMAS.length];
+      sbtRep += 6.5;
+      treasury += 18.0;
+      document.getElementById("turnLog").textContent = `🃏 ${card}`;
+      renderBoard();
+    }
+
+    function voteSnakeName(choice) {
+      sbtRep += 3.0;
+      document.getElementById("turnLog").textContent = `🗳️ Voto registrado no Farcaster Frame: "${choice}" (+3.0 SBT de participação comunitária!).`;
+      renderBoard();
+    }
+
+    function instantJump81() {
+      playerPos = 81;
+      sbtRep += 50.0;
+      document.getElementById("sbtSubtext").innerHTML = "<strong class='text-emerald-400'>✅ CUNHADO ON-CHAIN (Token #01 • ERC-5192 Soulbound)!</strong>";
+      document.getElementById("turnLog").textContent = "🏆 Jornada de 9 Ciclos concluída (Casa 81)! SBT 'Completei a Jornada de 9 Ciclos do Maha Grid' emitido para seu FID Farcaster.";
+      renderBoard();
+    }
+
+    function resetBoard() {
+      playerPos = 1;
+      sbtRep = 30.0;
+      treasury = 1148.5;
+      document.getElementById("sbtSubtext").textContent = "Alcance a Casa 81 para cunhar seu Soulbound Token (ERC-5192) não-especulativo.";
+      document.getElementById("turnLog").textContent = "Tabuleiro reiniciado na Casa 1 (Ciclo 1). Boa jornada!";
+      renderBoard();
+    }
+
+    function copyCastText() {
+      const el = document.getElementById("castComposer");
+      navigator.clipboard.writeText(el.value);
+      document.getElementById("turnLog").textContent = "📋 Cast copiado para a área de transferência! Pronto para colar no Warpcast/Farcaster.";
+    }
+
+    renderBoard();
+  </script>
+</body>
+</html>

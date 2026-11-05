@@ -1,0 +1,35 @@
+{
+  "name": "@maha-grid/farcaster-mini-app",
+  "version": "1.0.0",
+  "description": "Maha Grid — Governança Agêntica, Jogo Phygital (9 Ciclos), Farcaster Mini App (Frame v2), Simulação cadCAD/TokenSpice & Kit de Grants Públicos",
+  "private": false,
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "simulate": "python3 simulations/maha_grid_sim.py",
+    "test": "python3 -m unittest discover -s simulations -p 'test_*.py'",
+    "neynar:init": "npx @neynar/create-farcaster-mini-app@latest"
+  },
+  "keywords": [
+    "maha-grid",
+    "farcaster",
+    "frames-v2",
+    "mini-apps",
+    "neynar",
+    "web3-summit",
+    "nodespace",
+    "polkadot",
+    "web3-foundation",
+    "nouns-dao",
+    "flows",
+    "clanker",
+    "cadcad",
+    "tokenspice",
+    "soulbound-token",
+    "agentic-governance",
+    "phygital"
+  ],
+  "dependencies": {
+    "@farcaster/frame-sdk": "^0.0.30"
+  }
+}
