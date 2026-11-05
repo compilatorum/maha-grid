@@ -1,0 +1,103 @@
+{
+  "embassy_coalition": {
+    "coalition_id": "EMB-COALITION-2027-01",
+    "board_square": 67,
+    "board_cycle": 8,
+    "topic": "Coalizão Unificada: Simulador cadCAD/TokenSpice & Contratos SBT + Mini-App Omnicanal & Kit Físico Nodespace Berlim",
+    "combined_budget_usd": 24000.0,
+    "savings_pct": 20.0,
+    "pareto_efficiency": 0.94,
+    "shapley_split": {
+      "faction_alpha_sim": 0.45,
+      "faction_beta_phygital": 0.35,
+      "haas_human_stewards_pool": 0.12,
+      "embassy_ai_steward_infra": 0.08
+    },
+    "conflicts": [
+      {
+        "side": "A vs B",
+        "who": "@steward_alpha & @steward_beta",
+        "severity": "alta",
+        "issue": "Divergência sobre abertura imediata do código/dados vs período de exclusividade.",
+        "suggestion": "Abrir código e telemetria bruta sob MIT/CC0 desde o Dia 1; conceder bônus de +20 SBT ao autor do modelo."
+      },
+      {
+        "side": "ambos",
+        "who": "Ambos Proponentes",
+        "severity": "media",
+        "issue": "Alocação média para validadores humanos (7.0%) abaixo do mínimo de segurança anti-Sybil.",
+        "suggestion": "Reservar 12% do orçamento para o Pool HaaS (Human-as-a-Service), remunerando zeladores humanos e playtesters."
+      }
+    ],
+    "agreements": [
+      "Licença 100% aberta (MIT / CC0) desde o primeiro commit com citação on-chain via SBT ERC-5192",
+      "Reserva de 12% do orçamento total para tarefas HaaS (Human-as-a-Service: auditoria ética e playtests físicos)",
+      "Prestação de contas sincronizada no KarmaHQ (GAP), Questbook e Farcaster Mini App"
+    ],
+    "transcript": [
+      {
+        "speaker": "Agent_Steward_Alpha",
+        "side": "A",
+        "text": "Represento @steward_alpha (Simulador cadCAD/TokenSpice & Contratos SBT). Propomos unificar nosso motor cadCAD/TokenSpice com sua frente comunitária."
+      },
+      {
+        "speaker": "Agent_Steward_Beta",
+        "side": "B",
+        "text": "Represento @steward_beta (Mini-App Omnicanal & Kit Físico Nodespace Berlim). Aceitamos se garantirmos 12% para o pool HaaS de playtesters no Nodespace e Farcaster."
+      },
+      {
+        "speaker": "Embassy_Mediator_Bot",
+        "side": "Embassy",
+        "text": "Pacto H-A-H selado na Casa 67 (Ciclo 8)! Orçamento otimizado de $30,000 para $24,000 (-20%) com eficiência de Pareto 0.94."
+      }
+    ],
+    "haas_tasks": [
+      {
+        "task_id": "HAAS-2027-01",
+        "category": "Ethical_Oracle_Arbitration",
+        "description": "Validar critério de desempate contra a Serpente Vasuki (Casa 58) e ratificar divisão Shapley.",
+        "bounty_usd": 120.0,
+        "sbt_reward": 15.0,
+        "min_sbt_required": 25.0,
+        "status": "OPEN_FOR_HUMAN_STEWARDS"
+      },
+      {
+        "task_id": "HAAS-2027-02",
+        "category": "Physical_Nodespace_Facilitation",
+        "description": "Conduzir sessão presencial de playtest (6 jogadores) com o tabuleiro 9x9 e registrar telemetria.",
+        "bounty_usd": 180.0,
+        "sbt_reward": 25.0,
+        "min_sbt_required": 30.0,
+        "status": "OPEN_FOR_HUMAN_STEWARDS"
+      }
+    ],
+    "voter_digest": [
+      "Economia imediata de 20% ($6,000) pela fusão de escopo entre faction_alpha_sim e faction_beta_phygital.",
+      "Governança Web4 H-A-H: monitorada por AI Stewards e auditada por Zeladores Humanos (HaaS).",
+      "Pagamentos atrelados a marcos verificáveis no KarmaHQ (GAP) e Soulbound Attestations."
+    ]
+  },
+  "questbook_Export": {
+    "title": "Coalizão Unificada: Simulador cadCAD/TokenSpice & Contratos SBT + Mini-App Omnicanal & Kit Físico Nodespace Berlim",
+    "budget_usdc": 24000.0,
+    "milestones_count": 3,
+    "rubric_score_projection": "5/5 (High Reusability & On-Chain Accountability)"
+  },
+  "karmahq_gap_Export": {
+    "schema": "karmahq.gap.v2.project_coalition",
+    "coalition_id": "EMB-COALITION-2027-01",
+    "attestation_contract": "contracts/MahaGridSBT.sol",
+    "verified_by_haas": true
+  },
+  "omnifront_bot_status": {
+    "farcaster_miniapp_ready": true,
+    "standalone_web_pwa_ready": true,
+    "supported_commands": [
+      "!propose",
+      "!coalition",
+      "!haas",
+      "!attest",
+      "!roll"
+    ]
+  }
+}

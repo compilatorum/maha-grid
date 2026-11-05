@@ -1,76 +1,85 @@
-# 🐍🪜 Maha Grid — Governança Agêntica, Jogo Phygital (9 Ciclos) & Build-in-Public OS
+# 🏛️🐍 Maha Grid & The Embassy — Governança Web4 Agêntica, H-A-H, HaaS & Jogo Phygital (9 Ciclos)
 
-> **Bem Público Financiável**: *Da concepção física e simulação econômica (cadCAD/TokenSpice) ao Farcaster Mini App (Frames v2), validação presencial no Nodespace (Web3 Summit Berlim 2027) e sustentabilidade multi-ecossistema (Web3 Foundation, Polkadot OpenGov, Flows/Nouns DAO e Clanker Ecosystem Fund).*
+> **Bem Público Financiável (Web3 + Web4 Agêntica)**: *Onde IA e Humanos atuam como Stewards/Zeladores (`Human-Agent-Human` e `Human-as-a-Service`) no Jogo das Coalizões para DAO Proposals — operando dentro e fora do Farcaster, validado presencialmente no Nodespace (Web3 Summit Berlim 2027) e estruturado para Questbook, KarmaHQ (GAP), Web3 Foundation, Polkadot OpenGov, Flows (Nouns DAO) e Clanker Ecosystem Fund.*
 
 ---
 
-## 🗺️ O Fluxo de Trabalho (Visão Macro)
-
-O diagrama abaixo resume o pipeline completo implementado neste repositório, integrando as três frentes paralelas:
+## 🗺️ 1. Visão Macro & Topologia Web4 Agêntica (The Embassy)
 
 ```mermaid
 graph TD
-    A[💡 Ideia & Protótipo Físico] --> B{🔨 Build in Public no Farcaster}
-    B -->|Posts diários / Frames| C[📊 Prova de Tração & Comunidade]
-    A --> D[🧩 Nodespace Web3 Summit]
-    D -->|Aplicação de Node| E[📅 Evento Presencial Berlim 2027]
-    C --> F[💰 Aplicações para Grants]
-    E --> F
-    F --> G[🏦 Web3 Foundation / Polkadot Treasury]
-    F --> H[🌊 Flows / Nouns DAO]
-    F --> I[🦄 Clanker Ecosystem Fund]
+    A[💡 Ideia, Tabuleiro 9x9 & Protótipo Físico] --> B{🤖 Mini-App & Bot Omnicanal<br/>Dentro e Fora do Farcaster}
+    A --> D[🧩 Nodespace Web3 Summit<br/>Berlim 2027 + SIP]
     
-    style A fill:#e1f5fe,stroke:#01579b
-    style B fill:#fff3e0,stroke:#e65100
-    style C fill:#e8f5e9,stroke:#1b5e20
-    style D fill:#f3e5f5,stroke:#4a148c
-    style E fill:#fce4ec,stroke:#880e4f
-    style F fill:#fffde7,stroke:#f57f17
-    style G fill:#e0f2f1,stroke:#004d40
-    style H fill:#e0f2f1,stroke:#004d40
-    style I fill:#e0f2f1,stroke:#004d40
+    B --> E[🏛️ THE MAHA EMBASSY<br/>Jogo das Coalizões Web4]
+    D --> E
+    
+    subgraph EMBASSY_CORE["🤝 Zeladoria Dual: IA + Humanos como Stewards"]
+        E --> HAH[🔄 Protocolo H-A-H<br/>Human-Agent-Human Negotiation]
+        E --> HAAS[🛎️ Protocolo HaaS<br/>Human-as-a-Service Bounties]
+    end
+
+    HAH --> F[💰 Propostas de Coalizão & Accountability]
+    HAAS --> F
+
+    F --> G[📘 Questbook<br/>Domain Allocator Grants]
+    F --> K[🛡️ KarmaHQ GAP<br/>On-Chain Attestations]
+    F --> W[🏦 Web3 Foundation &<br/>Polkadot OpenGov]
+    F --> N[🌊 Flows / Nouns DAO &<br/>🦄 Clanker Ecosystem Fund]
+    F --> FCF[🟣 Farcaster Frames Grants &<br/>Bountycaster / Rounds.wtf]
 ```
 
 ---
 
-## 📂 Arquitetura do Repositório
+## 📂 2. Mapa Completo de Documentos, Modelos de Grants e Specs
 
-| Diretório / Arquivo | Frente Estratégica | Descrição Técnica |
-| :--- | :--- | :--- |
-| [`index.html`](./index.html) | **Frente 1 (Farcaster Mini App)** | App interativo com metadados `fc:frame` v2, Tabuleiro 9x9 (81 casas), "Frame Diário", Enquete de Serpentes, Simulador SBT e Gerador de Casts. |
-| [`public/.well-known/farcaster.json`](./public/.well-known/farcaster.json) | **Frente 1 (Neynar / Frames v2)** | Manifesto oficial do Farcaster Mini App seguindo [miniapps.farcaster.xyz](https://miniapps.farcaster.xyz/). |
-| [`docs/rulebook-maha-grid.md`](./docs/rulebook-maha-grid.md) | **Frente 1 & 2 (Regras & Diário)** | Apostila multilíngue (PT-BR / EN / DE) dos 9 Ciclos, 6 Escadas, 6 Serpentes e templates de Casts para `/web3`, `/dao`, `/gaming` e `/build`. |
-| [`simulations/maha_grid_sim.py`](./simulations/maha_grid_sim.py) | **Frente 1 & 3 (cadCAD / TokenSpice)** | Motor Python de simulação estocástica de governança agêntica e tesouraria em 9 Ciclos + testes unitários ([`simulations/test_sim.py`](./simulations/test_sim.py)). |
-| [`simulations/output/simulation_report.md`](./simulations/output/simulation_report.md) | **Prova de Mecanismo** | Relatório técnico automatizado com evolução de tesouraria, índice de Gini de reputação SBT e resistência a captura. |
-| [`contracts/MahaGridSBT.sol`](./contracts/MahaGridSBT.sol) | **Frente 3 (Tokenização Phygital)** | Contrato Soulbound Token (ERC-5192) não-especulativo para emitir a atestação *"Completei a Jornada de 9 Ciclos do Maha Grid"*. |
-| [`nodespace-berlin/01-nodespace-playbook-and-sip.md`](./nodespace-berlin/01-nodespace-playbook-and-sip.md) | **Frente 2 (Nodespace Berlim)** | E-mail pronto (EN/PT) para `contact@web3summit.com`, especificação física do Node, proposta de SIP e template de Relatório de Playtest. |
-| [`grants/01-web3-foundation-polkadot.md`](./grants/01-web3-foundation-polkadot.md) | **Frente 3A (Infraestrutura)** | Aplicações completas para **Web3 Foundation Grants** e **Polkadot Treasury (OpenGov Referendum)**. |
-| [`grants/02-flows-nouns-and-clanker.md`](./grants/02-flows-nouns-and-clanker.md) | **Frente 3B (Farcaster/Nouns)** | Aplicações completas para **Flows (Nouns DAO)** e **Clanker Ecosystem Fund (CEF)**. |
-| [`roadmap/90-day-execution-plan.md`](./roadmap/90-day-execution-plan.md) | **Cronograma de 90 Dias** | Plano tático executável para Semanas 1–2, Semanas 3–4, Mês 2 e Mês 3. |
+### 🧠 Especificações Web4 Agêntica, Embassy, Bot & Mini-App (Dentro e Fora do Farcaster)
+| Arquivo | Descrição |
+| :--- | :--- |
+| [`specs/01-embassy-web4-hah-haas-architecture.md`](./specs/01-embassy-web4-hah-haas-architecture.md) | Arquitetura da **Embassy** adaptada para o Jogo das Coalizões em DAO Proposals: Zeladoria Dual (AI + Human Stewards), fluxo **H-A-H (`Human-Agent-Human`)** e marketplace **HaaS (`Human-as-a-Service`)**. |
+| [`specs/02-omnifront-bot-and-miniapp-spec.md`](./specs/02-omnifront-bot-and-miniapp-spec.md) | Especificação completa do **`@maha-embassy-bot`** e do **Mini-App Omnicanal** com paridade dentro do Farcaster (`fc:frame` v2, Neynar webhooks) e fora do Farcaster (Standalone Web4 PWA, Telegram/Discord, REST & MCP Server). |
+| [`src/embassy_agent_engine.py`](./src/embassy_agent_engine.py) | Motor executável em Python da **Embassy**: negociação H-A-H entre AI Stewards, detecção de conflitos, divisão pelo *Valor de Shapley*, despacho de tarefas HaaS e exportação JSON em [`simulations/output/embassy_coalition_bundle.json`](./simulations/output/embassy_coalition_bundle.json). |
+
+### 💰 Modelos de Documentos para Grants, Questbook, KarmaHQ, Farcaster Frames & DAO Proposals
+| Arquivo | Plataforma / Protocolo Alvo |
+| :--- | :--- |
+| [`grants/01-web3-foundation-polkadot.md`](./grants/01-web3-foundation-polkadot.md) | **Web3 Foundation Grants** ($30k em 3 milestones) & **Polkadot Treasury OpenGov Referendum** ($18k para Oficina Berlim + Kit Aberto). |
+| [`grants/02-flows-nouns-and-clanker.md`](./grants/02-flows-nouns-and-clanker.md) | **Flows.wtf (Nouns DAO)** (streaming contínuo CC0) & **Clanker Ecosystem Fund (CEF)** (reciclagem de taxas Farcaster). |
+| [`grants/03-questbook-grant-application.md`](./grants/03-questbook-grant-application.md) | **Questbook (DDA Model — Arbitrum / Compound / Polygon)**: rubrica de avaliação 5/5, KPIs verificáveis e orçamento detalhado por milestone. |
+| [`grants/04-karmahq-gap-profile-and-milestones.md`](./grants/04-karmahq-gap-profile-and-milestones.md) | **KarmaHQ — GAP (Grantee Accountability Protocol)**: schema completo do projeto, status dos milestones e payload JSON de atestação EAS / Soulbound. |
+| [`grants/05-farcaster-frames-grants-and-rounds.md`](./grants/05-farcaster-frames-grants-and-rounds.md) | **Farcaster Frames Grants (`Rounds.wtf`, `Bountycaster`, `Purple DAO`, `Base Builds`)**: templates de Casts, bounties HaaS e JSON dos Frames de ratificação de coalizão. |
+| [`grants/06-embassy-dao-coalition-proposal-template.md`](./grants/06-embassy-dao-coalition-proposal-template.md) | **Modelo Oficial de DAO Proposal da Embassy**: Resumo de 3 pontos para votantes, auditoria de conflitos H-A-H, tabela de Valor de Shapley e assinaturas de Zeladoria Dual. |
+
+### 🎲 Jogo Phygital, Simulação cadCAD/TokenSpice, Contratos SBT & Nodespace Berlim
+| Arquivo | Descrição |
+| :--- | :--- |
+| [`index.html`](./index.html) | **Mini-App Interativo (In & Out Farcaster)**: Tabuleiro 9x9 (81 casas), Câmara Diplomática da Embassy (H-A-H / HaaS), exportador de templates (Questbook/KarmaHQ/Frames/Bot) e cunhagem SBT. |
+| [`simulations/maha_grid_sim.py`](./simulations/maha_grid_sim.py) | Simulador estocástico estilo `cadCAD/TokenSpice` dos 9 Ciclos + relatório gerado em [`simulations/output/simulation_report.md`](./simulations/output/simulation_report.md). |
+| [`contracts/MahaGridSBT.sol`](./contracts/MahaGridSBT.sol) | Contrato **Soulbound Token (ERC-5192)** para emissão da atestação não-transferível *"Completei a Jornada de 9 Ciclos do Maha Grid"*. |
+| [`docs/rulebook-maha-grid.md`](./docs/rulebook-maha-grid.md) | Apostila Multilíngue (PT-BR / EN / DE) dos 9 Ciclos, 6 Escadas, 6 Serpentes e Diário de Bordo. |
+| [`nodespace-berlin/01-nodespace-playbook-and-sip.md`](./nodespace-berlin/01-nodespace-playbook-and-sip.md) | E-mail para `contact@web3summit.com`, setup do Node físico e proposta de **SIP (Summit Improvement Proposal)**. |
+| [`roadmap/90-day-execution-plan.md`](./roadmap/90-day-execution-plan.md) | Cronograma tático de 90 dias (Semanas 1–2, Semanas 3–4, Mês 2 e Mês 3). |
 
 ---
 
-## 🚀 Como Executar Rapidamente
+## 🚀 Como Executar e Testar Tudo Localmente
 
-### 1. Rodar o Farcaster Mini App / Frame Diário Localmente
 ```bash
-# Servir o Mini App interativo na porta 3000:
-npm run dev
-# Ou inicializar um novo scaffold Neynar Farcaster Mini App em < 60s:
-npx @neynar/create-farcaster-mini-app@latest
-```
-
-### 2. Executar a Simulação cadCAD / TokenSpice e os Testes Automatizados
-```bash
-# Rodar a simulação de 24 épocas dos 9 Ciclos e gerar telemetria + relatório Markdown:
+# 1. Rodar a simulação cadCAD/TokenSpice dos 9 Ciclos:
 python3 simulations/maha_grid_sim.py
 
-# Rodar a suíte de testes unitários:
+# 2. Rodar o motor de negociação H-A-H e despacho HaaS da Embassy:
+python3 src/embassy_agent_engine.py
+
+# 3. Executar a suíte completa de testes unitários (Tabuleiro + Simulação + Embassy H-A-H/HaaS):
 python3 -m unittest discover -s simulations -p 'test_*.py'
+
+# 4. Iniciar o Mini-App Omnicanal na porta 3000:
+npm run dev
 ```
 
 ---
 
 ## 📜 Licença
 
-Distribuído sob licença **MIT** (código e simulações) e **CC0 / CC-BY-SA 4.0** (regras do jogo, baralho phygital e apostila multilíngue) como um Bem Público Web3.
+Código e motores de simulação sob licença **MIT**; artefatos culturais, apostila multilíngue e templates da Embassy sob **CC0 / CC-BY-SA 4.0**.

@@ -1,5 +1,6 @@
 import unittest
 from simulations.maha_grid_sim import run_monte_carlo_episode, compute_gini, LADDERS, SNAKES
+from src.embassy_agent_engine import FactionProposal, negotiate_hah_coalition, build_omnifront_export_bundle
 
 
 class TestMahaGridSimulation(unittest.TestCase):
@@ -25,6 +26,36 @@ class TestMahaGridSimulation(unittest.TestCase):
         g = compute_gini([1.0, 10.0, 50.0, 100.0])
         self.assertGreater(g, 0.0)
         self.assertLess(g, 1.0)
+
+    def test_embassy_hah_coalition_and_haas_engine(self):
+        p_a = FactionProposal(
+            faction_id="alpha",
+            human_steward="@alice",
+            ai_steward="Agent_Alice",
+            title="Core Sim",
+            requested_budget_usd=15000.0,
+            open_source_from_day_one=False,
+            haas_allocation_pct=5.0,
+            marginal_contribution_score=50.0,
+        )
+        p_b = FactionProposal(
+            faction_id="beta",
+            human_steward="@bob",
+            ai_steward="Agent_Bob",
+            title="Phygital Kit",
+            requested_budget_usd=15000.0,
+            open_source_from_day_one=True,
+            haas_allocation_pct=5.0,
+            marginal_contribution_score=50.0,
+        )
+        res = negotiate_hah_coalition(p_a, p_b)
+        self.assertEqual(res.combined_budget_usd, 24000.0)
+        self.assertAlmostEqual(sum(res.shapley_split.values()), 1.0, places=4)
+        self.assertEqual(len(res.conflicts), 2)
+        self.assertGreaterEqual(len(res.haas_tasks), 2)
+        bundle = build_omnifront_export_bundle(res)
+        self.assertTrue(bundle["omnifront_bot_status"]["farcaster_miniapp_ready"])
+        self.assertTrue(bundle["omnifront_bot_status"]["standalone_web_pwa_ready"])
 
 
 if __name__ == "__main__":
