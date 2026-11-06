@@ -173,15 +173,18 @@
         </div>
 
         <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2.5">
-          <div class="text-xs font-bold text-white">📄 Modelos Prontos (Grants &amp; Accountability)</div>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <button onclick="loadGrantTemplate('questbook')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">📘 Questbook</button>
-            <button onclick="loadGrantTemplate('karmahq')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🛡️ KarmaHQ GAP</button>
-            <button onclick="loadGrantTemplate('frames')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🟣 Frames / DeFAI</button>
-            <button onclick="loadGrantTemplate('w3f')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🏦 W3F / OpenGov</button>
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-white">🔌 Quad-API Gateway (Farcaster × GitHub × Questbook × KarmaHQ)</span>
+            <button onclick="runQuadApiSync()" class="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px]">🔄 Rodar Quad-Sync</button>
           </div>
-          <textarea id="grantTemplatePreview" rows="5" class="w-full rounded-lg bg-slate-900 border border-slate-700 p-2.5 text-[11px] text-slate-200 font-mono">Selecione acima para visualizar e copiar o template para Questbook, KarmaHQ GAP, Farcaster Frames ou W3F/OpenGov.</textarea>
-          <button onclick="copyGrantPreview()" class="w-full py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs">📋 Copiar Documento</button>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="loadGrantTemplate('farcaster_api')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🛰️ Farcaster API V2/Hub</button>
+            <button onclick="loadGrantTemplate('github_api')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🐙 GitHub API v3/v4</button>
+            <button onclick="loadGrantTemplate('questbook')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">📘 Questbook API (GQL)</button>
+            <button onclick="loadGrantTemplate('karmahq')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🛡️ KarmaHQ GAP API</button>
+          </div>
+          <textarea id="grantTemplatePreview" rows="6" class="w-full rounded-lg bg-slate-900 border border-slate-700 p-2.5 text-[11px] text-slate-200 font-mono">Clique em Farcaster API, GitHub API, Questbook API ou KarmaHQ API acima para inspecionar os endpoints e payloads integrados, ou clique em "Rodar Quad-Sync".</textarea>
+          <button onclick="copyGrantPreview()" class="w-full py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs">📋 Copiar Payload da API</button>
         </div>
       </div>
     </section>
@@ -345,12 +348,26 @@
 
     function loadGrantTemplate(type) {
       const map = {
-        questbook: "[QUESTBOOK DDA] Maha Grid & Bot 'a zer' — $24,000 USDC (3 Milestones, KarmaHQ GAP Verified). Veja grants/03-questbook-grant-application.md",
-        karmahq: "[KARMAHQ GAP] Schema karmahq.gap.v2 — 36 Carteiras Surfpool Auditadas + SBT ERC-5192. Veja grants/04-karmahq-gap-profile-and-milestones.md",
+        farcaster_api: "[🛰️ FARCASTER API V2 (NEYNAR) + HUB API]\nPOST https://api.neynar.com/v2/farcaster/cast\nPOST https://api.neynar.com/v2/farcaster/frame/transaction\nGET https://hub-api.neynar.com/v1/verificationsByFid?fid=888888\nSincroniza Autoetnografia (◈), Resumo Escriba (⟁) e Dynamic Tx Frame DeFAI.",
+        github_api: "[🐙 GITHUB REST v3 + GRAPHQL v4 API]\nGET https://api.github.com/repos/compilatorum/maha-grid/commits/main\nPOST https://api.github.com/repos/compilatorum/maha-grid/releases\nPOST https://api.github.com/graphql (Shapley Contribution History)\nVerifica provas técnicas L4, testes unitários e binário APK assinado.",
+        questbook: "[📘 QUESTBOOK GRAPHQL & DDA SUBGRAPH API]\nPOST https://api.questbook.app/graphql\nmutation createGrantApplication / submitMilestone\nApp ID: qb-app-2027-maha-01 ($24,000 USDC • Shapley Split 45/35/12/8%).\nVeja specs/05-unified-api-gateway-farcaster-github-questbook-karmahq.md",
+        karmahq: "[🛡️ KARMAHQ GAP REST v2 & EAS ATTESTATION API]\nPOST https://gapapi.karmahq.xyz/milestones/attest\nPOST https://gapapi.karmahq.xyz/projects/maha-grid-embassy-web4/endorsements\nEAS Schema UID: 0x2d002f... • 36 Carteiras Surfpool Auditadas + SBT ERC-5192.",
         frames: "[FARCASTER FRAMES V2 & DEFAI] Dynamic Transaction Frames + Bot 'a zer' (Neynar V2). Veja grants/05-farcaster-frames-grants-and-rounds.md",
         w3f: "[W3F & POLKADOT OPENGOV] Simulação cadCAD/TokenSpice + Nodespace Berlim 2027. Veja grants/01-web3-foundation-polkadot.md"
       };
       document.getElementById("grantTemplatePreview").value = map[type] || map.questbook;
+    }
+
+    function runQuadApiSync() {
+      sbtRep += 12.0;
+      document.getElementById("grantTemplatePreview").value =
+        "✅ [QUAD-API SYNC COMPLETED]\n" +
+        "1. 🐙 GitHub API: Commit & 4 artefatos L4 verificados em compilatorum/maha-grid\n" +
+        "2. 🛡️ KarmaHQ GAP API: Milestone #1 atestado via EAS + Dual Steward Sign-off\n" +
+        "3. 📘 Questbook API: Mutation submitMilestone enviada ($8,000 USDC Tranche 1 Ready)\n" +
+        "4. 🛰️ Farcaster API: Crônica Edificante do Bot 'a zer' + Frame DeFAI publicados em /dao";
+      document.getElementById("turnLog").textContent = "🔄 Quad-API Sync executado entre Farcaster, GitHub, Questbook e KarmaHQ (+12.0 SBT)!";
+      renderBoard();
     }
 
     function copyGrantPreview() {

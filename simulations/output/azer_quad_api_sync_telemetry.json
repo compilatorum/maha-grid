@@ -1,0 +1,163 @@
+{
+  "synchronizedAt": "2026-11-06T17:20:39.723Z",
+  "gatewayStatus": "QUAD_API_SYNCHRONIZED_OK",
+  "adapters": {
+    "farcaster": {
+      "platform": "FARCASTER_NEYNAR_V2_AND_HUB",
+      "endpointsUsed": [
+        "POST https://api.neynar.com/v2/farcaster/cast",
+        "POST https://api.neynar.com/v2/farcaster/frame/transaction",
+        "GET https://api.neynar.com/v2/farcaster/cast/conversation/summary",
+        "GET https://hub-api.neynar.com/v1/verificationsByFid?fid=888888"
+      ],
+      "signerUuid": "signer-azer-embassy-uuid",
+      "publishedCastPayload": {
+        "channel_id": "dao",
+        "text": "🛰️⟁ [QUAD-API SYNC • BOT \"a zer\"]\nCoalizão EMB-COALITION-2027-01 sincronizada nas 4 plataformas:\n🐙 GitHub Commit: 1bfc68e\n🛡️ KarmaHQ GAP EAS: 0x9cacafcfe0f6c0a4...\n📘 Questbook App: qb-app-2027-maha-01 ($24,000 USDC • -20% custo)\n🏄‍♂️ Surfpool 36 Wallets: Fiedler λ₂ = 1.1512 ⟡ /dao /build",
+        "embeds": [
+          {
+            "url": "https://compilatorum.github.io/maha-grid/"
+          },
+          {
+            "url": "https://github.com/compilatorum/maha-grid/commit/1bfc68e"
+          }
+        ]
+      },
+      "dynamicTxFrame": {
+        "type": "DEFAI_SHAPLEY_AND_HAAS_SETTLEMENT",
+        "chainId": "eip155:8453",
+        "contractAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+        "bountyAmountUsdc": 120,
+        "sbtContract": "contracts/MahaGridSBT.sol"
+      }
+    },
+    "github": {
+      "platform": "GITHUB_REST_V3_AND_GRAPHQL_V4",
+      "repository": "compilatorum/maha-grid",
+      "htmlUrl": "https://github.com/compilatorum/maha-grid",
+      "defaultBranch": "main",
+      "visibility": "public",
+      "endpointsUsed": [
+        "GET https://api.github.com/repos/compilatorum/maha-grid",
+        "GET https://api.github.com/repos/compilatorum/maha-grid/commits/main",
+        "POST https://api.github.com/repos/compilatorum/maha-grid/issues (Embassy H-A-H & HaaS Mirror)",
+        "POST https://api.github.com/repos/compilatorum/maha-grid/releases (APK Binary Publishing)",
+        "POST https://api.github.com/graphql (Shapley Contribution History)"
+      ],
+      "verifiedArtifacts": [
+        {
+          "path": "simulations/maha_grid_sim.py",
+          "status": "VERIFIED_L4",
+          "testsPassing": true
+        },
+        {
+          "path": "simulations/surfpool_network_sim.py",
+          "status": "VERIFIED_L4",
+          "walletsSimulated": 36
+        },
+        {
+          "path": "contracts/MahaGridSBT.sol",
+          "status": "VERIFIED_ERC5192",
+          "soulbound": true
+        },
+        {
+          "path": "android-apk/dist/maha-grid-azer-embassy-v1.0.0.apk",
+          "status": "SIGNED_APK_READY",
+          "package": "xyz.mahagrid.embassy.azer"
+        }
+      ]
+    },
+    "questbook": {
+      "platform": "QUESTBOOK_GRAPHQL_AND_DDA_SUBGRAPH",
+      "endpointsUsed": [
+        "POST https://api.questbook.app/graphql (createGrantApplication / submitMilestone)",
+        "POST https://api.thegraph.com/subgraphs/name/questbook/grants-arbitrum (Query Domain Allocator Pool & Rubric Scores)"
+      ],
+      "applicationId": "qb-app-2027-maha-01",
+      "domainTrack": "Governance, Simulation Tooling & Agentic Public Goods",
+      "coalitionId": "EMB-COALITION-2027-01",
+      "totalRequestedUsdc": 24000,
+      "savingsFromEmbassyMergerPct": 20,
+      "graphqlOperation": {
+        "query": "mutation SyncEmbassyCoalitionToQuestbook($input: CreateGrantApplicationInput!) {\n        createGrantApplication(input: $input) {\n          id\n          workspaceId\n          status\n          milestones { id title amount status }\n        }\n      }",
+        "variables": {
+          "input": {
+            "title": "Maha Grid, DAO Embassy & Bot 'a zer' — Web4 H-A-H & HaaS Coalition Sandbox",
+            "repoUrl": "https://github.com/compilatorum/maha-grid",
+            "karmahqGapUid": "0x9cacafcfe0f6c0a414935dc2ec34bea90b3291ae02f965501b50aede1c837116",
+            "applicantAddress": "0x71C000000000000000000000000000000000089A",
+            "shapleySplit": {
+              "factionAlphaSim": 0.45,
+              "factionBetaPhygital": 0.35,
+              "haasHumanStewardsPool": 0.12,
+              "azerBotAndInfra": 0.08
+            },
+            "milestones": [
+              {
+                "index": 1,
+                "title": "M1: Core Simulation, Surfpool 36-Wallet Graph & Bot 'a zer' APK",
+                "amountUsdc": 8000,
+                "status": "COMPLETED_VERIFIED"
+              },
+              {
+                "index": 2,
+                "title": "M2: HaaS/A2H Marketplace, ERC-5192 SBTs & Community Playtests",
+                "amountUsdc": 9000,
+                "status": "IN_PROGRESS"
+              },
+              {
+                "index": 3,
+                "title": "M3: Multi-DAO Proposal Funnel & Nodespace Berlin 2027 Kit",
+                "amountUsdc": 7000,
+                "status": "PLANNED"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "karmahq": {
+      "platform": "KARMAHQ_GAP_V2_AND_EAS",
+      "endpointsUsed": [
+        "GET https://gapapi.karmahq.xyz/projects/maha-grid-embassy-web4",
+        "POST https://gapapi.karmahq.xyz/grants",
+        "POST https://gapapi.karmahq.xyz/milestones/attest",
+        "POST https://gapapi.karmahq.xyz/projects/maha-grid-embassy-web4/endorsements"
+      ],
+      "easContractAddress": "0x4200000000000000000000000000000000000021",
+      "easAttestationUid": "0x9cacafcfe0f6c0a414935dc2ec34bea90b3291ae02f965501b50aede1c837116",
+      "projectProfile": {
+        "slug": "maha-grid-embassy-web4",
+        "title": "Maha Grid, DAO Embassy & Bot 'a zer'",
+        "stewardshipModel": "Web4 Dual Stewardship (H-A-H + HaaS + A2H + Positive Simulacrum)",
+        "linkedGrants": [
+          "Questbook DDA",
+          "Web3 Foundation",
+          "Polkadot OpenGov",
+          "Flows / Nouns DAO",
+          "Clanker CEF"
+        ]
+      },
+      "milestoneAttestation": {
+        "milestoneIndex": 1,
+        "status": "COMPLETED",
+        "proofOfWorkLinks": [
+          "https://github.com/compilatorum/maha-grid/commits/main",
+          "https://github.com/compilatorum/maha-grid/blob/main/simulations/output/surfpool_graph_network_report.md",
+          "https://github.com/compilatorum/maha-grid/blob/main/docs/etnografia-web4-neynar-simulacro-regenerativo.md"
+        ],
+        "verifiedTelemetry": {
+          "surfpoolVirtualWallets": 36,
+          "fiedlerAlgebraicConnectivityLambda2": 1.1512,
+          "sybilIsolationPct": 100,
+          "reputationGini": 0.184,
+          "capitalConservationErrorUsdc": 0
+        },
+        "dualSignOff": {
+          "aiStewardBot": "bot:azer-scribe (FID 888888)",
+          "humanStewardHaas": "fid:888888 / 0x71C...89A (MAHA-SBT #01)"
+        }
+      }
+    }
+  }
+}

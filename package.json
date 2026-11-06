@@ -11,6 +11,7 @@
     "embassy": "python3 src/embassy_agent_engine.py",
     "neynar:scribe": "node src/neynar_scribe_client.mjs",
     "azer:brain": "node src/azer_neynar_v2_brain.mjs",
+    "api:quad": "node src/azer_quad_api_adapter.mjs",
     "build:apk": "python3 scripts/build_apk.py",
     "test": "python3 -m unittest discover -s simulations -p 'test_*.py'",
     "neynar:init": "npx @neynar/create-farcaster-mini-app@latest"
