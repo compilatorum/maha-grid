@@ -1,0 +1,93 @@
+{
+  "paradigm": "Web4_Agentic_Plus_Web5_Sovereign_Hypercoordination",
+  "gap_mitigations_verified": {
+    "gap_1_proofgate_circuit_breaker": {
+      "normal_l2_tx": {
+        "proposal_id": "TREATY-L2-001",
+        "requested_amount_usdc": 8100.0,
+        "historical_mean_usdc": 8000.0,
+        "historical_std_usdc": 380.79,
+        "z_score": 0.2626,
+        "ai_confidence_score": 0.96,
+        "status": "AUTO_EXECUTED_L2",
+        "reason": "Dentro dos parâmetros de segurança ProofGate (Z=0.2626 <= 1.5σ). Treaty executado em L2 pelo bot 'a zer'."
+      },
+      "anomalous_halted_tx": {
+        "proposal_id": "TREATY-ANOMALY-999",
+        "requested_amount_usdc": 22000.0,
+        "historical_mean_usdc": 8000.0,
+        "historical_std_usdc": 380.79,
+        "z_score": 36.7658,
+        "ai_confidence_score": 0.72,
+        "status": "EMERGENCY_HARD_LOCK",
+        "reason": "Bloqueio Crítico: Alocação ($22,000) excede 3.0σ (Z=36.7658). Possível alucinação/exploit."
+      }
+    },
+    "gap_2_anti_rubber_stamping_a2h": {
+      "dilemma_id": "DILEMMA-VASUKI-58",
+      "blind_presentation_enforced": true,
+      "human_steward_did": "did:web5:envoy:berlin_steward_01",
+      "chosen_ethical_principle": "Priorizar código aberto CC0 imediato com reserva de 12% para validadores comunitários",
+      "counterfactual_rationale": "Após análise cega das duas propostas sem viés de score algorítmico, determinamos que a abertura imediata dos modelos cadCAD evita monopólio de dados e remunera justamente os coletores presenciais.",
+      "cognitive_depth_score": 100.0,
+      "rubber_stamping_rejected": true,
+      "verified_signature": "0xA2H_COG_2a4833f306c345947204034361c38cf52b24a83e"
+    },
+    "gap_3_web5_zk_privacy_pod": {
+      "envoy_did": "did:web5:envoy:alpha_builder",
+      "farcaster_fid": 888888,
+      "sovereign_wallet": "0x71C000000000000000000000000000000000089A",
+      "raw_private_data_exposed": false,
+      "zk_commitment_hash": "zk_pedersen_0x301be5a32a9c07e3777d2de90fffb9a4f582540aef1b1904e38f720b864cd6e3",
+      "public_verified_predicates": {
+        "has_min_sbt_reputation_25": true,
+        "has_verified_github_wip": true,
+        "is_sybil_resistant_human": true,
+        "domain_match_governance_sim": true
+      },
+      "h2a_delegation_token": "h2a_session_b6fc15bf4a277f8a53f2b6da3cf483cd"
+    },
+    "gap_4_wip_gated_builder_esport": {
+      "builder_guild": {
+        "guild_embassy_name": "Embassy_Berlin_Builders",
+        "arena_nodes": [
+          "Nodespace_Berlin_Physical",
+          "Playground.dot_Metaverse",
+          "Farcaster_Frames_Hypermedia"
+        ],
+        "raw_game_board_points": 850.0,
+        "verified_github_wip_commits": 8,
+        "verified_farcaster_treaties": 4,
+        "effective_grant_allocation_power": 850.0,
+        "mercenary_grinding_penalized": false
+      },
+      "mercenary_guild_penalized": {
+        "guild_embassy_name": "Clicker_Mercenary_Syndicate",
+        "arena_nodes": [
+          "Nodespace_Berlin_Physical",
+          "Playground.dot_Metaverse",
+          "Farcaster_Frames_Hypermedia"
+        ],
+        "raw_game_board_points": 1200.0,
+        "verified_github_wip_commits": 0,
+        "verified_farcaster_treaties": 1,
+        "effective_grant_allocation_power": 45.0,
+        "mercenary_grinding_penalized": true
+      }
+    },
+    "gap_5_sovereign_perma_ledger": {
+      "participant_wallet": "0x71C000000000000000000000000000000000089A",
+      "participant_did": "did:web5:envoy:alpha_builder",
+      "sbt_contract_erc5192": "contracts/MahaGridSBT.sol (Token #01 Soulbound)",
+      "eas_onchain_uid": "0xeas_sovereign_b51b5cd1fb566e8d0b530b9c5f1e821a2f60ff8a917cd788",
+      "ipfs_cid_v1": "bafybeigb51b5cd1fb566e8d0b530b9c5f1e821a2f60ff8a917c",
+      "arweave_permaweb_tx": "ar://0b530b9c5f1e821a2f60ff8a917cd788c057fc53383",
+      "saas_read_views_only": [
+        "KarmaHQ_GAP (Stateless Read-View Mirror)",
+        "Questbook_DDA (Stateless Read-View Mirror)",
+        "Neynar_Explorer (Social Indexer View)"
+      ],
+      "survives_saas_shutdown": true
+    }
+  }
+}

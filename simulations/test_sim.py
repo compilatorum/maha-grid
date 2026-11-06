@@ -7,6 +7,7 @@ from simulations.surfpool_network_sim import (
     compute_network_science_metrics,
 )
 from scripts.build_apk import create_signed_apk, build_valid_minimal_dex
+from src.web5_proofgate_hypercoordination import run_hypercoordination_suite
 from pathlib import Path
 import zipfile
 
@@ -89,6 +90,31 @@ class TestMahaGridSimulation(unittest.TestCase):
             self.assertIn("resources.arsc", names)
             self.assertIn("assets/www/index.html", names)
             self.assertIn("META-INF/MANIFEST.MF", names)
+
+    def test_web4_web5_proofgate_and_5_gap_mitigations(self):
+        report = run_hypercoordination_suite()
+        gm = report["gap_mitigations_verified"]
+        g1 = gm["gap_1_proofgate_circuit_breaker"]
+        self.assertEqual(g1["normal_l2_tx"]["status"], "AUTO_EXECUTED_L2")
+        self.assertEqual(g1["anomalous_halted_tx"]["status"], "EMERGENCY_HARD_LOCK")
+
+        g2 = gm["gap_2_anti_rubber_stamping_a2h"]
+        self.assertGreaterEqual(g2["cognitive_depth_score"], 90.0)
+        self.assertTrue(g2["blind_presentation_enforced"])
+
+        g3 = gm["gap_3_web5_zk_privacy_pod"]
+        self.assertFalse(g3["raw_private_data_exposed"])
+        self.assertTrue(g3["public_verified_predicates"]["has_min_sbt_reputation_25"])
+
+        g4 = gm["gap_4_wip_gated_builder_esport"]
+        self.assertGreater(
+            g4["builder_guild"]["effective_grant_allocation_power"],
+            g4["mercenary_guild_penalized"]["effective_grant_allocation_power"] * 10,
+        )
+
+        g5 = gm["gap_5_sovereign_perma_ledger"]
+        self.assertTrue(g5["survives_saas_shutdown"])
+        self.assertTrue(g5["ipfs_cid_v1"].startswith("bafybeig"))
 
 
 if __name__ == "__main__":

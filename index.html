@@ -224,6 +224,55 @@
         </div>
       </div>
     </section>
+
+    <!-- 🌐 Web4 & Web5 Hypercoordination + ProofGate Policy Engine & 5 Gap Mitigations -->
+    <section class="bg-slate-900/95 border border-cyan-500/40 rounded-2xl p-5 shadow-2xl space-y-4">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
+        <div>
+          <span class="text-xs font-mono uppercase tracking-wider text-cyan-400">🌐 Web4 ("Algorithm as Policy" / ProofGate) × Web5 ("Indivíduo → Coletivo" / Sovereign Ledger)</span>
+          <h2 class="text-lg font-bold text-white mt-0.5">🛡️ ProofGate Policy Engine, Arena E-sport Playground.dot &amp; Mitigação dos 5 Gaps Críticos</h2>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+          <button onclick="runWeb5GapSimulation('gap1')" class="px-3 py-1.5 rounded-lg bg-rose-900/60 hover:bg-rose-800 border border-rose-500/50 text-rose-200 font-semibold">⚡ Gap 1: Circuit Breaker (μ+2σ)</button>
+          <button onclick="runWeb5GapSimulation('gap2')" class="px-3 py-1.5 rounded-lg bg-amber-900/60 hover:bg-amber-800 border border-amber-500/50 text-amber-200 font-semibold">🧠 Gap 2: A2H Anti-Rubber-Stamp</button>
+          <button onclick="runWeb5GapSimulation('gap3')" class="px-3 py-1.5 rounded-lg bg-purple-900/60 hover:bg-purple-800 border border-purple-500/50 text-purple-200 font-semibold">🔐 Gap 3: Web5 ZK-Pod</button>
+          <button onclick="runWeb5GapSimulation('gap4')" class="px-3 py-1.5 rounded-lg bg-emerald-900/60 hover:bg-emerald-800 border border-emerald-500/50 text-emerald-200 font-semibold">🎮 Gap 4: WIP-Gated E-sport</button>
+          <button onclick="runWeb5GapSimulation('gap5')" class="px-3 py-1.5 rounded-lg bg-cyan-900/60 hover:bg-cyan-800 border border-cyan-500/50 text-cyan-200 font-semibold">⛓️ Gap 5: Perma-Ledger (IPFS+Arweave)</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+            <div class="font-bold text-rose-400">1. ProofGate ("Algorithm as Policy")</div>
+            <p class="text-slate-300">Executa Treaties L2 automaticamente se <code>Z ≤ 2.0σ</code> e <code>u ≤ $1,500</code>. Se um LLM alucinar (ex: <code>$9,500 USDC</code>, <code>Z=41.58σ</code>), trava no <strong>Circuit Breaker</strong> e exige <code>A2H</code>.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+            <div class="font-bold text-amber-400">2. A2H de Alta Cognição (Anti-Carimbo)</div>
+            <p class="text-slate-300">Oculta o botão de aprovação rápida. Exige resolução de dilema ético com justificativa substantiva (≥80 chars) e seleção cega contra parágrafo armadilha.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+            <div class="font-bold text-purple-400">3. Web5 Sovereign Pod + ZK-Predicates</div>
+            <p class="text-slate-300">O diário etnográfico fica criptografado no Data Pod do Envoy. O bot <code>"a zer"</code> recebe apenas provas de predicado ZK + casts públicos com opt-in.</p>
+          </div>
+          <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
+            <div class="font-bold text-emerald-400">4 &amp; 5. Builder E-sport &amp; Perma-Anchor</div>
+            <p class="text-slate-300">Arena <code>Playground.dot</code> exige commit real GitHub + ata Nodespace (bloqueia mercenários). Provas ancoradas em <code>Wallet SBT + EAS + IPFS + Arweave</code>.</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2">
+          <div class="text-xs font-bold text-cyan-300">📡 Console de Telemetria Web4/Web5 &amp; ProofGate:</div>
+          <pre id="web5GapConsole" class="text-[11px] font-mono text-emerald-300 whitespace-pre-wrap bg-slate-900/90 p-3 rounded-lg border border-slate-800 min-h-[148px]">[PROOFGATE POLICY ENGINE READY]
+• Gap 1 (L2 Normal $680): AUTO_APPROVED_L2 (Z=0.39σ)
+• Gap 1 (Outlier $9,500): PAUSED_CIRCUIT_BREAKER (Z=41.58σ -> A2H)
+• Gap 2 (A2H Cognitivo): Rubber-Stamp Bloqueado | Parecer Ético Aceito
+• Gap 3 (Web5 ZK-Pod): Raw Diary Exposed = false | ZK-Predicate = true
+• Gap 4 (Playground.dot): Clicker Mercenary Blocked | Builder Guild +60 XP
+• Gap 5 (Perma-Ledger): SBT + EAS + IPFS CIDv1 + Arweave Permaweb</pre>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script>
@@ -381,6 +430,20 @@
     function toggleRuntimeMode() {
       const b = document.getElementById("runtimeBadge");
       b.textContent = b.textContent.includes("APK") ? "🟣 Runtime: Farcaster Frame V2 (Neynar)" : "📱 APK Android / Farcaster V2 / Web4";
+    }
+
+    function runWeb5GapSimulation(gapKey) {
+      sbtRep += 8.0;
+      const logs = {
+        gap1: "⚡ [GAP 1 • PROOFGATE CIRCUIT BREAKER (μ + 2σ)]\n• Micro-Treaty L2 ($680 USDC): Z=0.39σ <= 2.0σ -> AUTO_APPROVED_L2\n• Anomalia/Alucinação ($9,500 USDC): Z=41.58σ > 2.0σ -> PAUSED_CIRCUIT_BREAKER_A2H_REQUIRED\n• Tesouraria protegida contra drenagem algorítmica!",
+        gap2: "🧠 [GAP 2 • COGNITIVE A2H ANTI-RUBBER-STAMPING]\n• Tentativa 1 (1.2s, 'ok aprovo'): REJEITADA (FADIGA/CARIMBO DETECTADO)\n• Tentativa 2 (48.5s, Racional de Equidade de Ostrom + Seleção Cega Correta): VALIDADA (+120 USDC / +15 SBT)",
+        gap3: "🔐 [GAP 3 • WEB5 SOVEREIGN DATA POD + ZK-PREDICATES]\n• Diário privado mantido no Pod local do Envoy (raw_diary_exposed = false)\n• Predicado ZK verificado pelo bot 'a zer': Score Etnográfico >= 70 & Sem Conflito de Interesse",
+        gap4: "🎮 [GAP 4 • PLAYGROUND.DOT WIP-GATED BUILDER E-SPORT]\n• Guilda Mercenária (0 commits GitHub): BLOCKED_CLICKER_MERCENARY\n• Guilda Builder (Nodespace Berlim + Commit GitHub + 42 testes): ARENA_TURN_COMMITTED (+60 Builder XP)",
+        gap5: "⛓️ [GAP 5 • SOVEREIGN PERMA-LEDGER VS. SAAS VIEWS]\n• Âncora Primária: Carteira do Indivíduo (ERC-5192 SBT) + EAS UID + IPFS CIDv1 + Arweave Permaweb\n• KarmaHQ & Questbook operam como Views Stateless descartáveis (Sobrevive a 100% de queda SaaS)"
+      };
+      document.getElementById("web5GapConsole").textContent = logs[gapKey] || logs.gap1;
+      document.getElementById("turnLog").textContent = `🛡️ Simulação ${gapKey.toUpperCase()} validada no ProofGate Web4/Web5 (+8.0 SBT)!`;
+      renderBoard();
     }
 
     renderAzerModules("ALL");

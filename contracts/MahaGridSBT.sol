@@ -35,6 +35,24 @@ contract MahaGridSBT {
         string metadataUri
     );
 
+    /// @notice Gap 1 (ProofGate Circuit Breaker): Emitido quando uma alocação L2 excede o limiar estatístico e exige A2H
+    event ProofGateCircuitBreakerTriggered(
+        address indexed envoyAgent,
+        uint256 requestedAmountUsdCents,
+        uint256 zScoreBps,
+        bytes32 ethicalParadoxHash
+    );
+
+    /// @notice Gap 4 & Gap 5 (Web5 Sovereign Perma-Anchor + Builder WIP): Emitido ao ancorar prova de impacto soberana
+    event SovereignPermaImpactAnchored(
+        address indexed envoyWallet,
+        uint256 indexed farcasterFid,
+        bytes32 easAttestationUid,
+        string ipfsCidV1,
+        string arweaveTxId,
+        bytes32 githubWipCommitHash
+    );
+
     struct PlayerPassport {
         uint256 farcasterFid;
         uint8 currentCycle;        // 1 a 9
@@ -44,10 +62,14 @@ contract MahaGridSBT {
         bool completedNineCycles;  // True ao atingir a casa 81
         bool nodespaceAttested;    // True se validado presencialmente em um Node físico (ex: Berlim)
         uint256 sbtTokenId;        // ID do SBT cunhado (0 se ainda não cunhado)
+        bytes32 lastGithubWipHash; // Gap 4: Prova de commit real (Builder E-sport no Playground.dot)
+        string permaIpfsCid;       // Gap 5: Âncora soberana IPFS CIDv1 na carteira do indivíduo (Web5)
+        string permaArweaveTx;     // Gap 5: Âncora permanente Arweave Permaweb
     }
 
     address public stewardDao;
     uint256 public totalSupply;
+    uint256 public constant PROOFGATE_MAX_ZSCORE_BPS = 20000; // 2.00 desvios-padrão (200.00%)
 
     mapping(address => PlayerPassport) public passports;
     mapping(uint256 => address) public ownerOf;
@@ -149,6 +171,49 @@ contract MahaGridSBT {
             baseWeight = (baseWeight * 125) / 100; // +25% bônus de prova física (Phygital Nodespace)
         }
         return baseWeight;
+    }
+
+    /**
+     * @notice Gap 1, 4 & 5: Registra âncora soberana Web5 (IPFS + Arweave + GitHub WIP) ou aciona Circuit Breaker do ProofGate.
+     */
+    function anchorWeb5SovereignImpact(
+        address envoyWallet,
+        uint256 farcasterFid,
+        bytes32 easAttestationUid,
+        string calldata ipfsCidV1,
+        string calldata arweaveTxId,
+        bytes32 githubWipCommitHash,
+        uint256 requestedAmountUsdCents,
+        uint256 zScoreBps,
+        bytes32 ethicalParadoxHash
+    ) external onlyAttester returns (bool circuitBreakerTripped) {
+        PlayerPassport storage p = passports[envoyWallet];
+        if (p.farcasterFid == 0) {
+            p.farcasterFid = farcasterFid;
+        }
+        p.lastGithubWipHash = githubWipCommitHash;
+        p.permaIpfsCid = ipfsCidV1;
+        p.permaArweaveTx = arweaveTxId;
+
+        emit SovereignPermaImpactAnchored(
+            envoyWallet,
+            farcasterFid,
+            easAttestationUid,
+            ipfsCidV1,
+            arweaveTxId,
+            githubWipCommitHash
+        );
+
+        if (zScoreBps > PROOFGATE_MAX_ZSCORE_BPS) {
+            emit ProofGateCircuitBreakerTriggered(
+                msg.sender,
+                requestedAmountUsdCents,
+                zScoreBps,
+                ethicalParadoxHash
+            );
+            return true;
+        }
+        return false;
     }
 
     /**
