@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "npx serve . -l 3000",
     "simulate": "python3 simulations/maha_grid_sim.py",
+    "simulate:network": "python3 simulations/surfpool_network_sim.py",
     "embassy": "python3 src/embassy_agent_engine.py",
     "neynar:scribe": "node src/neynar_scribe_client.mjs",
     "test": "python3 -m unittest discover -s simulations -p 'test_*.py'",

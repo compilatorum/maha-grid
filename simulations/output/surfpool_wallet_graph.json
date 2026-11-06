@@ -1,0 +1,1035 @@
+{
+  "surfpool_runtime": {
+    "mode": "DETERMINISTIC_SURFNET_SVM_TWIN",
+    "rpc_url": "http://127.0.0.1:8899",
+    "surfnet_version": "1.7.0-twin",
+    "solana_core": "4.3.2",
+    "feature_set": "3383571666",
+    "epoch": "1071"
+  },
+  "network_science_metrics": {
+    "num_wallets": 36,
+    "num_multiplex_edges": 71,
+    "num_unique_undirected_edges": 69,
+    "graph_density": 0.1095,
+    "avg_clustering_coefficient": 0.1051,
+    "scribe_betweenness_centrality": 0.7884,
+    "fiedler_algebraic_connectivity_lambda2": 1.1512,
+    "sybil_isolation_pct": 100.0
+  },
+  "conservation_check": {
+    "initial_total_usdc": 24000.0,
+    "final_total_usdc": 24000.0,
+    "error_usdc": 0.0
+  },
+  "wallets": [
+    {
+      "wallet_id": "PDA_Treasury_Main",
+      "pubkey_base58": "DJeQY4BfudJ9p13nJPgHCxxXp1KouF8inLTwB3KtRobH",
+      "cluster_role": "vault_pda",
+      "farcaster_fid": 900001,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 100.0,
+      "governance_weight": 0.0,
+      "is_pda": true,
+      "pda_bump": 253
+    },
+    {
+      "wallet_id": "PDA_Embassy_Escrow",
+      "pubkey_base58": "SYB6o5ybuAE4RiqX4Kd7UhPcZehTCPmbHZsP1sF25CWB",
+      "cluster_role": "vault_pda",
+      "farcaster_fid": 900002,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 100.0,
+      "governance_weight": 0.0,
+      "is_pda": true,
+      "pda_bump": 255
+    },
+    {
+      "wallet_id": "PDA_HaaS_Pool",
+      "pubkey_base58": "vUgKPPDTG2ywNgRxRrfzxVjbfpXPozywB2qTNEanUd8D",
+      "cluster_role": "vault_pda",
+      "farcaster_fid": 900003,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 100.0,
+      "governance_weight": 0.0,
+      "is_pda": true,
+      "pda_bump": 255
+    },
+    {
+      "wallet_id": "PDA_Infra_Gas",
+      "pubkey_base58": "9GWryJVRE3PNUHqWbhWsroBrjvqXvpQqe19T6r6W3bdH",
+      "cluster_role": "vault_pda",
+      "farcaster_fid": 900004,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 100.0,
+      "governance_weight": 0.0,
+      "is_pda": true,
+      "pda_bump": 252
+    },
+    {
+      "wallet_id": "Wallet_Scribe_Human",
+      "pubkey_base58": "nb9owff3qpcP14YDzeaZU1EfbS3nqPJWoXPRJXJ3ATxG",
+      "cluster_role": "scribe_steward",
+      "farcaster_fid": 888881,
+      "balance_usdc_micro": 960000000,
+      "sbt_reputation": 85.0,
+      "governance_weight": 125.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Embassy_Bot",
+      "pubkey_base58": "qtuHPuDsVLxWdL1NeSFeNA55A8DWCPuXXe38SqsbgV1E",
+      "cluster_role": "scribe_steward",
+      "farcaster_fid": 888882,
+      "balance_usdc_micro": 960000000,
+      "sbt_reputation": 85.0,
+      "governance_weight": 125.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_01",
+      "pubkey_base58": "SrgZMszJvLkVYBCCEBdM9kdVK7BaZjZSgCjXe4mXuno9",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810001,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_02",
+      "pubkey_base58": "DqzixMuS1jR8B53nYQ44CRJAnYG4Rt27MLWjagfVddB8",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810002,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_03",
+      "pubkey_base58": "XYG5iWyp3XeWgNQZxbCC3sJeBiEM7ur7HESvew16iqoH",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810003,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_04",
+      "pubkey_base58": "tgzjmyuuKcGRQU5iwg4W2d3GamSh2Zr9wRM6uDLDB824",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810004,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_05",
+      "pubkey_base58": "n3p7JGGuDU3Y1WYzNEorwYvTsAeK3poTXNJt45w5vU51",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810005,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_06",
+      "pubkey_base58": "haHw4uPMPyrRdKU1vc3qDZUKwZSZmPrTDZC8DDRFt6z6",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810006,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_07",
+      "pubkey_base58": "vsHCgmNeYtWWQhNTknhymQ3oSVZKoHuXobjCS8ewnXL8",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810007,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Agent_Steward_08",
+      "pubkey_base58": "jWpUjJzUbJRawyGupLtF7jJgnykZuTWb3MAt8Tcayv8G",
+      "cluster_role": "ai_steward",
+      "farcaster_fid": 810008,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 40.0,
+      "governance_weight": 60.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Alpha_01",
+      "pubkey_base58": "dxhcdWRC3M5bcywzAQs1XLWTN9jSHcRSZ3RWZgdhEPBG",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710001,
+      "balance_usdc_micro": 2160000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Alpha_02",
+      "pubkey_base58": "T8TXiF8WAjMAw5ndvfknC6xQZhqoZTHLNubCizxgY2y1",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710002,
+      "balance_usdc_micro": 2160000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Alpha_03",
+      "pubkey_base58": "wKNje3DbXDZ8KwDFPtbVUYFWUfisVSPYuMaZXRXkSjzD",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710003,
+      "balance_usdc_micro": 2160000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Alpha_04",
+      "pubkey_base58": "hGP9gcq8g5AQ2NArifYFSS1dL6jwqdNABHHaiZKMTcBJ",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710004,
+      "balance_usdc_micro": 2160000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Alpha_05",
+      "pubkey_base58": "7x722B5w21j9qU4AucwpbYLRRgeh7n3sBEihGzgoSws7",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710005,
+      "balance_usdc_micro": 2160000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Beta_06",
+      "pubkey_base58": "Hw9HfTtu8UkVWxbVfB7GLXxB1dNSjByUd34QwtdGgXi5",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710006,
+      "balance_usdc_micro": 1680000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Beta_07",
+      "pubkey_base58": "xZ395dhUhBXoWpzvuhWXnb15rPCvkKEpCUoqcTHVxJc9",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710007,
+      "balance_usdc_micro": 1680000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Beta_08",
+      "pubkey_base58": "gWRhbdy8oWsHycvvUEqLgFxnEwS3AiuczSLvhEeubgv2",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710008,
+      "balance_usdc_micro": 1680000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Beta_09",
+      "pubkey_base58": "z7gMXXTVLKdk7xr25qJFPijUProAH6t2yw2RLi5CrW2F",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710009,
+      "balance_usdc_micro": 1680000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Builder_Beta_10",
+      "pubkey_base58": "pvVie31iXU1mMhHU48EyxP2etYY3vFU5Bf43JyBhrib2",
+      "cluster_role": "human_builder",
+      "farcaster_fid": 710010,
+      "balance_usdc_micro": 1680000000,
+      "sbt_reputation": 80.0,
+      "governance_weight": 45.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_01",
+      "pubkey_base58": "eRkWiDqLH9hS7SdotHnksjpUMrhG9ewPevbMsj6dKuYB",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610001,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_02",
+      "pubkey_base58": "TMDobdeoNDDr1HLkWWJ4gbiaSVp4AHNx3e2n1Bfa5EpH",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610002,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_03",
+      "pubkey_base58": "QFCZAvRvkZatwNvvM4vS15WD15ixSbKdg9T4j1dHGfN1",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610003,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_04",
+      "pubkey_base58": "Y4fMc8cJjedkWogWHuYYZHnKVJJJy1K8ZwtoxUrjdB26",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610004,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_05",
+      "pubkey_base58": "bov5v5LSGKR7h3Qthj7L5M2YJwJgCqtT1y3RSZUwpXT4",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610005,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_06",
+      "pubkey_base58": "64zcY4mqVSkJBLrra9E5Z87AGokwRyovbphWSUmGwTu5",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610006,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_07",
+      "pubkey_base58": "8REPW1hw3k21E6T5UanHH5ha4yERZo11HVX1gzWpBKiC",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610007,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_HaaS_Oracle_08",
+      "pubkey_base58": "enDQLCWJtqSbnaouYkLnrqZzckndoaZ3mMcj6RZE3E19",
+      "cluster_role": "haas_oracle",
+      "farcaster_fid": 610008,
+      "balance_usdc_micro": 360000000,
+      "sbt_reputation": 50.0,
+      "governance_weight": 75.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Naga_Sybil_01",
+      "pubkey_base58": "T7fX12cDtAHFzv68j4ukAuYGEmsuzjUSW7xHJRJdALN7",
+      "cluster_role": "naga_sybil",
+      "farcaster_fid": 990001,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 2.0,
+      "governance_weight": 1.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Naga_Sybil_02",
+      "pubkey_base58": "HpjNfMUtchdDxBfu84P9dbD3jpMDhA7mV16TA5gaPHyG",
+      "cluster_role": "naga_sybil",
+      "farcaster_fid": 990002,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 2.0,
+      "governance_weight": 1.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Naga_Sybil_03",
+      "pubkey_base58": "p4CdM31z3UdUgXvsRF81sytupaubJbBGy8H9RYULkJkF",
+      "cluster_role": "naga_sybil",
+      "farcaster_fid": 990003,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 2.0,
+      "governance_weight": 1.0,
+      "is_pda": false,
+      "pda_bump": 0
+    },
+    {
+      "wallet_id": "Wallet_Naga_Sybil_04",
+      "pubkey_base58": "RG4cNbpfQVQC3Tiv3SWX9mSoCfYVYuacMousRiTYEK5F",
+      "cluster_role": "naga_sybil",
+      "farcaster_fid": 990004,
+      "balance_usdc_micro": 0,
+      "sbt_reputation": 2.0,
+      "governance_weight": 1.0,
+      "is_pda": false,
+      "pda_bump": 0
+    }
+  ],
+  "edges": [
+    {
+      "source": "PDA_Treasury_Main",
+      "target": "PDA_Embassy_Escrow",
+      "layer": "M",
+      "weight": 24000.0,
+      "tx_signature": "5Surf4694e18352955934dc46aa0b914f8c947bffb1773f5ee912639d",
+      "label": "Dotação do Grant Unificado na Embassy (24,000 USDC)"
+    },
+    {
+      "source": "Wallet_Naga_Sybil_01",
+      "target": "Wallet_Naga_Sybil_02",
+      "layer": "R",
+      "weight": 0.5,
+      "tx_signature": "5Surf1e78b1a0dc8a60bd37ce7db4d7b6dbc2aa6b5be51cbba3d604da",
+      "label": "Wash-attestation Sybil (Isolado pelo Filtro Espectral)"
+    },
+    {
+      "source": "Wallet_Naga_Sybil_02",
+      "target": "Wallet_Naga_Sybil_03",
+      "layer": "R",
+      "weight": 0.5,
+      "tx_signature": "5Surf08718b4b06cb6f75f3450737093bb6afea537e19ba53ad45943c",
+      "label": "Wash-attestation Sybil (Isolado pelo Filtro Espectral)"
+    },
+    {
+      "source": "Wallet_Naga_Sybil_03",
+      "target": "Wallet_Naga_Sybil_04",
+      "layer": "R",
+      "weight": 0.5,
+      "tx_signature": "5Surfda3939558510bab351f7b62bd4b98d5425774b850bf01b87deba",
+      "label": "Wash-attestation Sybil (Isolado pelo Filtro Espectral)"
+    },
+    {
+      "source": "Wallet_Naga_Sybil_04",
+      "target": "Wallet_Naga_Sybil_01",
+      "layer": "R",
+      "weight": 0.5,
+      "tx_signature": "5Surf41f92454affd457a78a296456bfa222cfe6c3ab0506b3731808d",
+      "label": "Wash-attestation Sybil (Isolado pelo Filtro Espectral)"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_01",
+      "target": "Wallet_Agent_Steward_01",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf0b8bc2c8abecb50189e7fe3895457760d1ea6417c2c8e91b05c0",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_01",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf459f9e7692a38bfa8549577fd5b7fb6ec55fb13244e14c09cf83",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_02",
+      "target": "Wallet_Agent_Steward_02",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surffdc2db641c31d3ee84eb359e0a46d77db60075e65189fb2e1d37",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_02",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf01b30f685408756d544ee61a1c058fa1159268d97f06b60f4553",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_03",
+      "target": "Wallet_Agent_Steward_03",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf7e29e652dd0d2f48ef164edf5b45d40af47f59484606a3552161",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_03",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surfed0a8e1a09694e3f2ee86729d018e52abdf2a9473eb0133f8589",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_04",
+      "target": "Wallet_Agent_Steward_04",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf3be00aac3a0686298ca3456159d1d8e62938b24d0a430bc83259",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_04",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surff976cb98299adbe6619d322b10a3ef016d9eaaf865f7a44547dc",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_05",
+      "target": "Wallet_Agent_Steward_05",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf5f4dba6b4c9a956d0d8b5b961cffde470eb3af704f553aca7f20",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_05",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surfa4b8ae743c47dace2c1339339627ea4305c120d40cecda6cabeb",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Beta_06",
+      "target": "Wallet_Agent_Steward_06",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf6605639d21cb5edca731e7f209cb53f5c650df998fac6f6e2cc5",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_06",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surfa0a1b6a58e334c4f1e222f9a99550700364f9b430dcda5252c62",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Beta_07",
+      "target": "Wallet_Agent_Steward_07",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf1cad170d340d5390868d4b372cf0d6039b0bb71ed9a1e6b66bce",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_07",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf7bb1a9acb230ea19c5498f900ba08b447e18e12bec6bc86ceec1",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Beta_08",
+      "target": "Wallet_Agent_Steward_08",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf33093b9f72a9e6bab4a17d27edce601f61b4d3436b56c58e0261",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_08",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf39e53da4b2ecd80bde09ab56a75ac727aee16fead0a497e7cdfe",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Beta_09",
+      "target": "Wallet_Agent_Steward_01",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf9786fb5972d623e6794ab7ebddbe5bec5e9709b5a22ae5c05adc",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_01",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf459f9e7692a38bfa8549577fd5b7fb6ec55fb13244e14c09cf83",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Builder_Beta_10",
+      "target": "Wallet_Agent_Steward_02",
+      "layer": "G",
+      "weight": 12.5,
+      "tx_signature": "5Surf510cd27c4a4c288dd94d54319d2be9a85d7f1369986117bd361c",
+      "label": "Delegação H-A-H Builder -> AI Steward"
+    },
+    {
+      "source": "Wallet_Agent_Steward_02",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "G",
+      "weight": 18.0,
+      "tx_signature": "5Surf01b30f685408756d544ee61a1c058fa1159268d97f06b60f4553",
+      "label": "Pacto de Coalizão Shapley na Embassy"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "R",
+      "weight": 45.0,
+      "tx_signature": "5Surf1a3d80a19f1e895f0082e875ef4f829caa142aed0a5083ada5e0",
+      "label": "Sincronização Simbiótica Escriba Humano <-> Bot"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Alpha_01",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surf9caf1f101ed8f8d5b1d0465a2b4277f2b42e4cbb3a97a16c7b13",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Alpha_02",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surf2d048fd7f662a91ac18f4a768bb9c0076e3f1040f98118f3c278",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Alpha_03",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surfea6b1e161ff28b34be6b227b6f9c425be9b968df73269ffe689c",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Alpha_04",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surf587f2861f1283e341ec5f28277e5c8615543b97810247c53938c",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Alpha_05",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surf3de2d8790965f1f53ae46897403ad81af2539dbf2c541521c72a",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Beta_06",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surffb3fcbdfe59638c9227d36ec467a46ee394ff651d0afd3b942b2",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Beta_07",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surf1cd9f80929114f47e470e821c8afa1a98d914ec59d02b2b5d221",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Beta_08",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surfdbe8a8024644c81585a3d97e86da0577b33ed2eef9b27b4c102d",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Beta_09",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surffb197fcc90a3f13fb02420ad93ca61861e2ab0387a7057fb62c0",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "Wallet_Scribe_Human",
+      "target": "Wallet_Builder_Beta_10",
+      "layer": "R",
+      "weight": 15.0,
+      "tx_signature": "5Surfc3d941879e0b02d797c7c25f1e45a1f4715c5bfd5ccf23240f03",
+      "label": "Efeito Observador: Crônica Autoetnográfica Edificante"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "PDA_HaaS_Pool",
+      "layer": "M",
+      "weight": 2880.0,
+      "tx_signature": "5Surff29b53166c396b03b62a9b42166d377da2a11221146d122b806a",
+      "label": "Reserva 12% Pool HaaS/A2H"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "PDA_Infra_Gas",
+      "layer": "M",
+      "weight": 1920.0,
+      "tx_signature": "5Surf6ba57497bb41fdb3451c3028fef45607ac1cebd773c77d5b883e",
+      "label": "Reserva 8% Infra Agêntica"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_01",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surf5df13104802923cf5637ac26cfcca762210015b95db15c413ea9",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_01",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surff4aa64843fe2978d521847f0084bc802d05d5d9a2fe3faef8cf7",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_02",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surf5cf61beef5b2b344fe2327e5094923af0dac87fc18d5e1ed481e",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_02",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf72b09b1d1e15440e427cfa15d48629259d21741b45db7fcc4c30",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_03",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surf4cefd14f70aa4c606ce774e8c0ab36f46941e4ae85c90162ae71",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_03",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf080cc243508dff2c5134a6935835e258317d499fb14a8fe1ce7e",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_04",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surfeb2dfbf479dd57ac3f774dea87344f01d8a3e274ba42b8afec47",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_04",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surfc02b4f5dc8f296859cd2d5b6c8b02e7b7f4cbad7270bc93fe21d",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_05",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surf9e85da1267849c0f424f17c0d3dab2230575d4a1d0888848c7b5",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_05",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf983c9d764d5150a09251e53b4f56a0b94d022ece0d65d74d1be9",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_06",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surfbbb717dbb020d56726feafca1c4492b31aa1291fa8dcd9ebd962",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_06",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf828b6dfbd51ced5413ddbf7bdfdeabf2f991a46d085bc7749829",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_07",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surf7eb29c8aacf588011bb08e04d5b48e28e774e59cb56094622255",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_07",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf146b66ff75137fea31ac17ca90ffea9869f621ca155495cd804f",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_HaaS_Pool",
+      "target": "Wallet_HaaS_Oracle_08",
+      "layer": "M",
+      "weight": 360.0,
+      "tx_signature": "5Surff93049d9c8df1b5c8a455a3a91ebd2a1d01c2c1faace00173228",
+      "label": "Bounty A2H/HaaS Oráculo Ético & Playtest"
+    },
+    {
+      "source": "Wallet_HaaS_Oracle_08",
+      "target": "Wallet_Scribe_Human",
+      "layer": "R",
+      "weight": 20.0,
+      "tx_signature": "5Surf3e618711253dcdf9123f9a10a98c43edc0d88dc89f81e40dc19e",
+      "label": "Co-Assinatura KarmaHQ GAP & Validação HaaS"
+    },
+    {
+      "source": "PDA_Infra_Gas",
+      "target": "Wallet_Scribe_Human",
+      "layer": "M",
+      "weight": 960.0,
+      "tx_signature": "5Surfbf38804c2bb990e8e1387b2f3f95c087ffc874787e5f0ea77de5",
+      "label": "Stipend Escriba Humano"
+    },
+    {
+      "source": "PDA_Infra_Gas",
+      "target": "Wallet_Embassy_Bot",
+      "layer": "M",
+      "weight": 960.0,
+      "tx_signature": "5Surfd8b5f7d267d896c572fabef4703b33ca43ec90ee6b8c0ac98d8d",
+      "label": "Paymaster SBT & Webhook Gas"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Alpha_01",
+      "layer": "M",
+      "weight": 2160.0,
+      "tx_signature": "5Surf7e28fba3d8646c5d87be4c7a981b53801489d7fa430fd62021fe",
+      "label": "Shapley Split 45% (Facção Alpha)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Alpha_02",
+      "layer": "M",
+      "weight": 2160.0,
+      "tx_signature": "5Surf174f8e3e7aa3ae4dd8a3d65f1fa6fd91dae34e80927895f1da5f",
+      "label": "Shapley Split 45% (Facção Alpha)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Alpha_03",
+      "layer": "M",
+      "weight": 2160.0,
+      "tx_signature": "5Surff0ee780dee15056bab144683cdc83f5a3915817807b3aeaa25c7",
+      "label": "Shapley Split 45% (Facção Alpha)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Alpha_04",
+      "layer": "M",
+      "weight": 2160.0,
+      "tx_signature": "5Surf1df44df28f0dcd973712f6c7636e79344f1e6ec0921bf1c1c9d4",
+      "label": "Shapley Split 45% (Facção Alpha)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Alpha_05",
+      "layer": "M",
+      "weight": 2160.0,
+      "tx_signature": "5Surf33d7d4820f4def3958a686f382a7fe606c24e578e1cee1b9ae6c",
+      "label": "Shapley Split 45% (Facção Alpha)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Beta_06",
+      "layer": "M",
+      "weight": 1680.0,
+      "tx_signature": "5Surf4c3989c300c47c92db5e590759e55ab4b721f5c04ce41cfd1ab8",
+      "label": "Shapley Split 35% (Facção Beta)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Beta_07",
+      "layer": "M",
+      "weight": 1680.0,
+      "tx_signature": "5Surf0ca6625f0a5ca0bd0c406486c8c62c5e95d93f3babf01511ed7f",
+      "label": "Shapley Split 35% (Facção Beta)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Beta_08",
+      "layer": "M",
+      "weight": 1680.0,
+      "tx_signature": "5Surf1ce6274ee10610b0823c8480ac0936f6339d452fa21b26e592f2",
+      "label": "Shapley Split 35% (Facção Beta)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Beta_09",
+      "layer": "M",
+      "weight": 1680.0,
+      "tx_signature": "5Surf1e0c6a76087b93334e3e06fc87676833a93e78de4e4e00c4a55f",
+      "label": "Shapley Split 35% (Facção Beta)"
+    },
+    {
+      "source": "PDA_Embassy_Escrow",
+      "target": "Wallet_Builder_Beta_10",
+      "layer": "M",
+      "weight": 1680.0,
+      "tx_signature": "5Surf53d98da43e116b8a554000684b68cb7367fcbb39ae69cf94827f",
+      "label": "Shapley Split 35% (Facção Beta)"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_01",
+      "target": "Wallet_Builder_Beta_06",
+      "layer": "G",
+      "weight": 22.0,
+      "tx_signature": "5Surf5e45a4bccdaaaf26f34c759a06e03a9fd367584e6dc55e767816",
+      "label": "Co-Autoria CC0/MIT & SBT 9 Ciclos Mintado"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_02",
+      "target": "Wallet_Builder_Beta_07",
+      "layer": "G",
+      "weight": 22.0,
+      "tx_signature": "5Surfe07c0c2db03bc3ad7093a5e57f3362bcdcfbca79d2e1c70881ac",
+      "label": "Co-Autoria CC0/MIT & SBT 9 Ciclos Mintado"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_03",
+      "target": "Wallet_Builder_Beta_08",
+      "layer": "G",
+      "weight": 22.0,
+      "tx_signature": "5Surf11b3ea07db9acbac6946b26fdd1635a5d8db1cb34166899896b9",
+      "label": "Co-Autoria CC0/MIT & SBT 9 Ciclos Mintado"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_04",
+      "target": "Wallet_Builder_Beta_09",
+      "layer": "G",
+      "weight": 22.0,
+      "tx_signature": "5Surf7adff47b0e0da282b9e204652b5b3eaed7231c968db6b800d944",
+      "label": "Co-Autoria CC0/MIT & SBT 9 Ciclos Mintado"
+    },
+    {
+      "source": "Wallet_Builder_Alpha_05",
+      "target": "Wallet_Builder_Beta_10",
+      "layer": "G",
+      "weight": 22.0,
+      "tx_signature": "5Surfec3ae133d6b70959fcad1fa555a86db393ac19c7fcf3c9c859e5",
+      "label": "Co-Autoria CC0/MIT & SBT 9 Ciclos Mintado"
+    }
+  ],
+  "tx_logs": [
+    {
+      "tx": "TX-01",
+      "cu": 14200,
+      "desc": "Transferência de 24,000.00 USDC para PDA_Embassy_Escrow"
+    },
+    {
+      "tx": "TX-02",
+      "cu": 9800,
+      "desc": "Anel Sybil de 4 carteiras detectado e isolado (0 USDC drenados)"
+    },
+    {
+      "tx": "TX-03",
+      "cu": 28400,
+      "desc": "10 Builders e 8 AI Stewards acoplados na Câmara H-A-H"
+    },
+    {
+      "tx": "TX-04",
+      "cu": 19500,
+      "desc": "Crônica do Escriba publicada elevando a conectividade algébrica"
+    },
+    {
+      "tx": "TX-05",
+      "cu": 16100,
+      "desc": "Alocação de 2,880 USDC (HaaS) e 1,920 USDC (Infra)"
+    },
+    {
+      "tx": "TX-06",
+      "cu": 34200,
+      "desc": "Liquidação de 8 Bounties HaaS/A2H (360 USDC/cada) e Stipend do Escriba"
+    },
+    {
+      "tx": "TX-07",
+      "cu": 38900,
+      "desc": "Liquidação Shapley: 10,800 USDC (Alpha) + 8,400 USDC (Beta)"
+    },
+    {
+      "tx": "TX-08",
+      "cu": 22750,
+      "desc": "Cunhagem de SBTs ERC-5192 / Token-2022 NonTransferable na Casa 81"
+    }
+  ]
+}

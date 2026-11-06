@@ -1,6 +1,11 @@
 import unittest
 from simulations.maha_grid_sim import run_monte_carlo_episode, compute_gini, LADDERS, SNAKES
 from src.embassy_agent_engine import FactionProposal, negotiate_hah_coalition, build_omnifront_export_bundle
+from simulations.surfpool_network_sim import (
+    instantiate_36_virtual_wallets,
+    execute_surfpool_tx_cascade,
+    compute_network_science_metrics,
+)
 
 
 class TestMahaGridSimulation(unittest.TestCase):
@@ -56,6 +61,17 @@ class TestMahaGridSimulation(unittest.TestCase):
         bundle = build_omnifront_export_bundle(res)
         self.assertTrue(bundle["omnifront_bot_status"]["farcaster_miniapp_ready"])
         self.assertTrue(bundle["omnifront_bot_status"]["standalone_web_pwa_ready"])
+
+    def test_surfpool_virtual_wallet_graph_and_conservation(self):
+        wallets = instantiate_36_virtual_wallets()
+        self.assertEqual(len(wallets), 36)
+        edges, tx_logs = execute_surfpool_tx_cascade(wallets)
+        self.assertEqual(len(tx_logs), 8)
+        total_micro = sum(w.balance_usdc_micro for w in wallets.values())
+        self.assertEqual(total_micro, 24_000_000_000)
+        metrics = compute_network_science_metrics(wallets, edges)
+        self.assertGreater(metrics["fiedler_algebraic_connectivity_lambda2"], 0.5)
+        self.assertEqual(metrics["sybil_isolation_pct"], 100.0)
 
 
 if __name__ == "__main__":
