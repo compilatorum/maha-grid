@@ -33,9 +33,11 @@ graph TD
 
 ## 📂 2. Mapa Completo de Documentos, Modelos de Grants e Specs
 
-### 🧠 Especificações Web4 Agêntica, Embassy, Bot & Mini-App (Dentro e Fora do Farcaster)
+### 🧠 Especificações Web4 Agêntica, Etnografia Cibernética, Embassy, Bot & Mini-App (Dentro e Fora do Farcaster)
 | Arquivo | Descrição |
 | :--- | :--- |
+| [`docs/etnografia-web4-neynar-simulacro-regenerativo.md`](./docs/etnografia-web4-neynar-simulacro-regenerativo.md) | **Etnografia Cibernética Web4 & Data Storytelling**: Outline com glifos Unicode (`⟁`, `◈`, `⌬`, `⧬`, `⟡`), formalismos simbólicos, filosofemas (Baudrillard invertido / Simulacro Positivo, Efeito Observador de von Foerster, Stewardship de Zargham/Ostrom), autoetnografia no grafo social, modelagem `H-A-H`/`HaaS`/`A2H`, dados sintéticos pós-intervenção e guia Tri-Token com Neynar. |
+| [`src/neynar_scribe_client.mjs`](./src/neynar_scribe_client.mjs) | **Cliente Oficial `@neynar/nodejs-sdk` & Orquestrador Tri-Token**: Indexa o Perfil Autoetnográfico Vivo (`◈`), compõe a Crônica Edificante do Escriba (`⟁`) e estrutura transações de **Tokens Mercantis (`USDC`/`DOT`/`$DEGEN`/`$CLANKER`), Reputacionais (`MAHA-SBT`) e de Governança (`Shapley/Conviction`)**. |
 | [`specs/01-embassy-web4-hah-haas-architecture.md`](./specs/01-embassy-web4-hah-haas-architecture.md) | Arquitetura da **Embassy** adaptada para o Jogo das Coalizões em DAO Proposals: Zeladoria Dual (AI + Human Stewards), fluxo **H-A-H (`Human-Agent-Human`)** e marketplace **HaaS (`Human-as-a-Service`)**. |
 | [`specs/02-omnifront-bot-and-miniapp-spec.md`](./specs/02-omnifront-bot-and-miniapp-spec.md) | Especificação completa do **`@maha-embassy-bot`** e do **Mini-App Omnicanal** com paridade dentro do Farcaster (`fc:frame` v2, Neynar webhooks) e fora do Farcaster (Standalone Web4 PWA, Telegram/Discord, REST & MCP Server). |
 | [`src/embassy_agent_engine.py`](./src/embassy_agent_engine.py) | Motor executável em Python da **Embassy**: negociação H-A-H entre AI Stewards, detecção de conflitos, divisão pelo *Valor de Shapley*, despacho de tarefas HaaS e exportação JSON em [`simulations/output/embassy_coalition_bundle.json`](./simulations/output/embassy_coalition_bundle.json). |
