@@ -1,0 +1,35 @@
+name: Build Android APK (Maha Grid & Bot a zer)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python & Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Dependencies & Generate Telemetry Bundles
+        run: |
+          npm install
+          npm run simulate
+          npm run embassy
+          npm run simulate:network
+          node src/azer_neynar_v2_brain.mjs
+
+      - name: Package Signed Android APK
+        run: python3 scripts/build_apk.py
+
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: maha-grid-azer-embassy-apk
+          path: android-apk/dist/maha-grid-azer-embassy-v1.0.0.apk

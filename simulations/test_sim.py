@@ -6,6 +6,9 @@ from simulations.surfpool_network_sim import (
     execute_surfpool_tx_cascade,
     compute_network_science_metrics,
 )
+from scripts.build_apk import create_signed_apk, build_valid_minimal_dex
+from pathlib import Path
+import zipfile
 
 
 class TestMahaGridSimulation(unittest.TestCase):
@@ -72,6 +75,20 @@ class TestMahaGridSimulation(unittest.TestCase):
         metrics = compute_network_science_metrics(wallets, edges)
         self.assertGreater(metrics["fiedler_algebraic_connectivity_lambda2"], 0.5)
         self.assertEqual(metrics["sybil_isolation_pct"], 100.0)
+
+    def test_android_apk_package_integrity(self):
+        root_dir = Path(__file__).resolve().parent.parent
+        apk_path = create_signed_apk(root_dir)
+        self.assertTrue(apk_path.exists())
+        dex = build_valid_minimal_dex()
+        self.assertEqual(dex[:8], b"dex\n035\x00")
+        with zipfile.ZipFile(apk_path, "r") as zf:
+            names = set(zf.namelist())
+            self.assertIn("AndroidManifest.xml", names)
+            self.assertIn("classes.dex", names)
+            self.assertIn("resources.arsc", names)
+            self.assertIn("assets/www/index.html", names)
+            self.assertIn("META-INF/MANIFEST.MF", names)
 
 
 if __name__ == "__main__":

@@ -2,14 +2,16 @@
 <html lang="pt-BR" class="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maha Grid &amp; The Embassy — Web4 Agentic Governance, H-A-H, HaaS &amp; Omnichannel Mini-App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="manifest" href="public/manifest.json" />
+  <title>Maha Grid, DAO Embassy &amp; Bot "a zer" — APK Mobile, Neynar V2, Hub API &amp; Surfpool</title>
 
-  <!-- Farcaster Mini App / Frame v2 Meta Tags (https://miniapps.farcaster.xyz/) -->
-  <meta property="og:title" content="Maha Grid &amp; The Embassy — Web4 H-A-H &amp; HaaS Governance" />
-  <meta property="og:description" content="Jogo das Coalizões para DAO Proposals (9 Ciclos). IA e Humanos como Stewards (H-A-H / HaaS), Questbook, KarmaHQ e Farcaster Mini App." />
+  <!-- Farcaster Mini App / Frame v2 Meta Tags -->
+  <meta property="og:title" content="Maha Grid, DAO Embassy &amp; Bot 'a zer' (Neynar V2 + Surfpool)" />
+  <meta property="og:description" content="Jogo das Coalizões (9 Ciclos), Bot Etnógrafo 'a zer' (Neynar API V2 + Hub API), Malha Surfpool (36 Carteiras) e Grants." />
   <meta property="og:image" content="https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg" />
-  <meta name="fc:frame" content='{"version":"next","imageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","button":{"title":"🐍 Jogar Frame Diário &amp; Embassy Web4","action":{"type":"launch_frame","name":"Maha Grid &amp; Embassy","url":"https://compilatorum.github.io/maha-grid/","splashImageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","splashBackgroundColor":"#0b0f19"}}}' />
+  <meta name="fc:frame" content='{"version":"next","imageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","button":{"title":"🛰️ Abrir Maha Grid &amp; Bot a zer","action":{"type":"launch_frame","name":"Maha Grid &amp; Bot a zer","url":"https://compilatorum.github.io/maha-grid/","splashImageUrl":"https://raw.githubusercontent.com/compilatorum/maha-grid/main/public/og-frame.svg","splashBackgroundColor":"#0b0f19"}}}' />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -39,338 +41,249 @@
     }
   </style>
 </head>
-<body class="min-h-screen pb-16">
-  <!-- Header Omnicanal (Dentro e Fora do Farcaster) -->
-  <header class="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur sticky top-0 z-30">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex flex-wrap items-center justify-between gap-4">
+<body class="min-h-screen pb-20">
+  <!-- Top Mobile APK / Omnichannel Header -->
+  <header class="border-b border-slate-800/80 bg-slate-950/90 backdrop-blur sticky top-0 z-30">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-purple-500 to-emerald-500 flex items-center justify-center text-xl font-bold shadow-lg">
-          🏛️
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-purple-600 to-emerald-500 flex items-center justify-center text-xl font-bold shadow-lg">
+          🛰️
         </div>
         <div>
           <div class="flex flex-wrap items-center gap-2">
-            <h1 class="text-xl font-extrabold tracking-tight text-white">MAHA GRID &amp; THE EMBASSY</h1>
-            <span id="runtimeBadge" onclick="toggleRuntimeMode()" class="cursor-pointer text-xs font-mono px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40" title="Clique para alternar entre Modo Nativo Farcaster e Modo Standalone Web4">
-              🌐 Runtime: Auto-Detect (Farcaster + Web4 PWA)
+            <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-white">MAHA GRID • EMBASSY • BOT "a zer"</h1>
+            <span id="runtimeBadge" onclick="toggleRuntimeMode()" class="cursor-pointer text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
+              📱 APK Android / Farcaster V2 / Web4
             </span>
-            <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/40">H-A-H &amp; HaaS</span>
           </div>
-          <p class="text-xs text-slate-400">Web4 Agêntica • IA &amp; Humanos como Stewards • Jogo das Coalizões para DAO Proposals (Questbook, KarmaHQ, OpenGov, Flows)</p>
+          <p class="text-xs text-slate-400">Etnógrafo "a zer" (L0 Scout • L1 Envoy • L2 Escriba • L3 DeFAI) • Surfpool 36 Wallets • H-A-H &amp; HaaS</p>
         </div>
       </div>
 
       <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+        <a href="android-apk/dist/maha-grid-azer-embassy-v1.0.0.apk" download class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 text-slate-950 font-extrabold shadow hover:opacity-90 transition">
+          📲 Baixar APK (v1.0.0)
+        </a>
         <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
-          🃏 Cartas: <strong id="cardsCounter" class="text-amber-400">38 / 54</strong>
+          🛡️ SBT: <strong id="sbtScore" class="text-emerald-400">35.0</strong>
         </span>
         <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
-          🛡️ Reputação SBT: <strong id="sbtScore" class="text-emerald-400">35.0</strong>
-        </span>
-        <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-300">
-          🏦 Tesouraria: <strong id="treasuryVal" class="text-cyan-400">1,458.5 DOT</strong>
+          🜁 Fiedler λ₂: <strong class="text-cyan-400">1.1512</strong>
         </span>
       </div>
     </div>
   </header>
 
   <main class="max-w-7xl mx-auto px-4 mt-6 space-y-8">
-    <!-- Top Banner: As 4 Dimensões do Ecossistema -->
-    <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="p-4 rounded-2xl bg-slate-900/80 border border-amber-500/30">
-        <div class="text-xs font-mono text-amber-400 uppercase">1 • Farcaster &amp; Standalone OS</div>
-        <h2 class="text-sm font-bold text-white mt-1">🤖 Mini-App &amp; Bot Omnicanal</h2>
-        <p class="text-xs text-slate-300 mt-1">Roda dentro do Farcaster (<code class="text-amber-300">fc:frame</code> v2) e fora dele (Web4 PWA, Telegram/Discord, MCP API).</p>
+    <!-- PAINEL CENTRAL DO BOT ETNÓGRAFO "a zer": NEYNAR API V2 (21 CATEGORIAS) + FARCASTER HUB API (12 CATEGORIAS) -->
+    <section id="azer-brain" class="bg-slate-900/95 border border-purple-500/40 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-5">
+      <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
+        <div>
+          <span class="text-xs font-mono uppercase text-purple-400">🛰️ Farcaster API V2 (Neynar) + Hub API • Cérebro Operacional do Bot "a zer"</span>
+          <h2 class="text-xl font-extrabold text-white">Console Etnógrafo "a zer" (L0 Scout • L1 Envoy • L2 Escriba • L3 Treasury/DeFAI)</h2>
+          <p class="text-xs text-slate-400">Clique em qualquer módulo abaixo para inspecionar e executar os endpoints da Neynar V2 e do Farcaster Hub integrados à Maha Grid / DAO Embassy.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs font-mono">
+          <button onclick="filterAzerRole('ALL')" class="px-3 py-1.5 rounded-lg bg-purple-600 text-white font-bold">Todos (33 Módulos)</button>
+          <button onclick="filterAzerRole('L0')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🔭 L0 Scout</button>
+          <button onclick="filterAzerRole('L1')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">🕊️ L1 Envoy</button>
+          <button onclick="filterAzerRole('L2')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">⟁ L2 Escriba</button>
+          <button onclick="filterAzerRole('L3')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200">💸 L3 DeFAI/Onchain</button>
+          <button onclick="filterAzerRole('HUB')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300">🏛️ Hub API</button>
+        </div>
       </div>
-      <div class="p-4 rounded-2xl bg-slate-900/80 border border-cyan-500/30">
-        <div class="text-xs font-mono text-cyan-400 uppercase">2 • The Maha Embassy (Web4)</div>
-        <h2 class="text-sm font-bold text-white mt-1">🤝 Steward H-A-H &amp; HaaS</h2>
-        <p class="text-xs text-slate-300 mt-1">Agentes negociam coalizões (<code class="text-cyan-300">Human-Agent-Human</code>) e requisitam Zeladores Humanos (<code class="text-cyan-300">Human-as-a-Service</code>).</p>
-      </div>
-      <div class="p-4 rounded-2xl bg-slate-900/80 border border-purple-500/30">
-        <div class="text-xs font-mono text-purple-400 uppercase">3 • Coordenação Presencial</div>
-        <h2 class="text-sm font-bold text-white mt-1">🏛️ Nodespace Berlim 2027</h2>
-        <p class="text-xs text-slate-300 mt-1">Validação física no Web3 Summit (<code class="text-purple-300">contact@web3summit.com</code>), SIP interativa e apostila PT/EN/DE.</p>
-      </div>
-      <div class="p-4 rounded-2xl bg-slate-900/80 border border-emerald-500/30">
-        <div class="text-xs font-mono text-emerald-400 uppercase">4 • Multi-Grant &amp; Accountability</div>
-        <h2 class="text-sm font-bold text-white mt-1">💰 Questbook, KarmaHQ, W3F &amp; Flows</h2>
-        <p class="text-xs text-slate-300 mt-1">Exportação direta de propostas de coalizão e atestações GAP + Soulbound Token (<code class="text-emerald-300">ERC-5192</code>).</p>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <!-- Grade de Categorias Neynar V2 & Hub API -->
+        <div id="azerModulesGrid" class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[430px] overflow-y-auto pr-1"></div>
+
+        <!-- Inspector & Executor de Endpoint do Bot "a zer" -->
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-4 flex flex-col justify-between space-y-3">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span id="azerSelectedCategory" class="text-xs font-bold text-amber-400 font-mono">🤖 Agentes (Agentic Features — Web4 Core)</span>
+              <span id="azerSelectedLayer" class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-300">L2 Escriba + L3 DeFAI</span>
+            </div>
+            <p id="azerSelectedDesc" class="text-xs text-slate-300 leading-relaxed">
+              Inclui Cast Conversation Summary (Escriba L2 para resumir threads longas com Efeito Observador ⟁), User Interactions (grafo H-A-H) e Dynamic Transaction Frames (DeFAI staking e pagamento de bounties HaaS direto no feed).
+            </p>
+            <div class="p-3 rounded-lg bg-slate-900 border border-slate-800 font-mono text-[11px] text-emerald-300 whitespace-pre-wrap" id="azerEndpointList">• fetchCastConversationSummary (Resumo Escriba L2)
+• fetchUserInteractions (Mapeamento H-A-H)
+• createDynamicTransactionFrame / getDynamicTransactionFrame (DeFAI Tx)</div>
+          </div>
+
+          <div class="space-y-2 pt-2 border-t border-slate-800">
+            <div class="text-[11px] font-mono text-slate-400">Saída de Telemetria do Bot "a zer" (Neynar V2 / Hub):</div>
+            <div id="azerExecOutput" class="p-2.5 rounded-lg bg-slate-900/90 border border-purple-500/30 text-[11px] font-mono text-purple-200">
+              [a zer ready] SDK @neynar/nodejs-sdk v2 conectado. Selecione um módulo e clique em Executar Ação.
+            </div>
+            <button onclick="executeAzerModuleAction()" class="w-full py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-xs shadow-lg transition">
+              ⚡ Executar Ação do Bot "a zer" via Neynar V2 / Hub
+            </button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- SEÇÃO NOVA: THE MAHA EMBASSY — Jogo das Coalizões H-A-H & HaaS para DAO Proposals -->
-    <section id="embassy" class="bg-slate-900/95 border border-cyan-500/30 rounded-2xl p-6 shadow-2xl space-y-5">
+    <!-- THE MAHA EMBASSY — Jogo das Coalizões H-A-H, HaaS, A2H & Surfpool 36 Wallets -->
+    <section id="embassy" class="bg-slate-900/95 border border-cyan-500/30 rounded-2xl p-5 sm:p-6 shadow-2xl space-y-5">
       <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
         <div>
-          <span class="text-xs font-mono uppercase text-cyan-400">🏛️ The Maha Embassy • Protocolo Web4 Agêntico</span>
-          <h2 class="text-xl font-extrabold text-white">Jogo das Coalizões para DAO Proposals (Steward H-A-H &amp; Human-as-a-Service)</h2>
-          <p class="text-xs text-slate-400">Adaptado do módulo Steward H-A-H: Agentes negociam termos, detectam conflitos, calculam a divisão de Shapley e acionam Zeladores Humanos (HaaS).</p>
+          <span class="text-xs font-mono uppercase text-cyan-400">🏛️ The Maha Embassy × 🏄‍♂️ Surfpool Virtual Wallet Network (36 Carteiras)</span>
+          <h2 class="text-lg sm:text-xl font-extrabold text-white">Jogo das Coalizões para DAO Proposals (H-A-H • HaaS • A2H • Efeito Observador ⟁)</h2>
         </div>
-        <div class="flex gap-2">
-          <button onclick="runEmbassyNegotiation()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-extrabold text-xs shadow-lg transition">
-            ⚡ Simular Negociação H-A-H na Embassy
+        <div class="flex flex-wrap gap-2">
+          <button onclick="runEmbassyNegotiation()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 text-slate-950 font-extrabold text-xs shadow transition">
+            🤝 Pacto H-A-H (-20% Budget)
           </button>
-          <button onclick="dispatchHaasTask()" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
-            🛎️ Aceitar Tarefa HaaS (+120 USDC / +15 SBT)
+          <button onclick="dispatchHaasTask()" class="px-3.5 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
+            🛎️ Despacho A2H / HaaS (+120 USDC)
           </button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
-        <!-- Transcript H-A-H & Conflitos/Acordos -->
-        <div class="lg:col-span-7 space-y-4">
-          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-cyan-300">🤖 Transcript da Câmara Diplomática (Human → Agent ↔ Agent → Human)</span>
-              <span class="text-[11px] font-mono text-emerald-400">Eficiência de Pareto: 94%</span>
+        <div class="lg:col-span-7 space-y-3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs font-mono">
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Malha Surfpool</div>
+              <div class="text-sm font-bold text-emerald-400">36 Wallets / PDAs</div>
             </div>
-            <div id="hahTranscript" class="space-y-2 text-xs text-slate-300 font-mono">
-              <div class="p-2 rounded bg-slate-900/90 border-l-2 border-amber-400">
-                <strong>[Agent_Steward_Alpha (Lado A)]</strong>: Represento @steward_alpha (Motor cadCAD/TokenSpice). Propomos fundir nossa proposta com o kit comunitário do Lado B para evitar duplicação no Questbook.
-              </div>
-              <div class="p-2 rounded bg-slate-900/90 border-l-2 border-purple-400">
-                <strong>[Agent_Steward_Beta (Lado B)]</strong>: Represento @steward_beta (Mini-App &amp; Nodespace Berlim). Aceitamos a coalizão se abrirmos 100% do código desde o Dia 1 e reservarmos 12% para Zeladores Humanos (HaaS).
-              </div>
-              <div class="p-2 rounded bg-emerald-950/40 border-l-2 border-emerald-400 text-emerald-200">
-                <strong>[@maha-embassy-bot (Mediador)]</strong>: Pacto #EMB-COALITION-2027-01 selado na Casa 67 (Ciclo 8)! Orçamento unificado caiu de $30,000 para $24,000 (-20% para a DAO).
-              </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Conectividade (λ₂)</div>
+              <div class="text-sm font-bold text-cyan-400">1.1512 (Forte)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Isolamento Sybil</div>
+              <div class="text-sm font-bold text-amber-400">100.0% (Anti-Naga)</div>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+              <div class="text-[10px] text-slate-400">Conservação USDC</div>
+              <div class="text-sm font-bold text-purple-400">24,000.00 (Erro 0)</div>
             </div>
           </div>
 
-          <!-- Conflitos Resolvidos & Acordos Sugeridos -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div class="p-3.5 rounded-xl bg-rose-950/20 border border-rose-500/30 space-y-1.5">
-              <div class="text-xs font-bold text-rose-300">⚠️ Conflitos Detectados &amp; Mitigados</div>
-              <p class="text-[11px] text-slate-300">• <strong>[Alta]</strong> Exclusividade de 6 meses vs Open-Source imediato → <em>Resolvido: MIT/CC0 no Dia 1 + Bônus de +20 SBT.</em></p>
-              <p class="text-[11px] text-slate-300">• <strong>[Média]</strong> Sub-remuneração de playtesters → <em>Resolvido: Pool HaaS fixado em 12% ($2,880 USDC).</em></p>
-            </div>
-            <div class="p-3.5 rounded-xl bg-emerald-950/20 border border-emerald-500/30 space-y-1.5">
-              <div class="text-xs font-bold text-emerald-300">💡 Divisão de Shapley &amp; Acordos</div>
-              <p class="text-[11px] text-slate-300">• <strong>45% ($10,800)</strong>: Facção A (Simulação &amp; Contratos)</p>
-              <p class="text-[11px] text-slate-300">• <strong>35% ($8,400)</strong>: Facção B (Mini-App &amp; Nodespace)</p>
-              <p class="text-[11px] text-slate-300">• <strong>12% ($2,880)</strong>: Pool HaaS (Zeladores Humanos)</p>
-              <p class="text-[11px] text-slate-300">• <strong>8% ($1,920)</strong>: Infraestrutura Agêntica &amp; Gas SBT</p>
-            </div>
+          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-2 text-xs font-mono text-slate-300">
+            <div class="text-cyan-300 font-bold">⟁ Crônica do Escriba "a zer" (Simulacro Positivo ⟡ &amp; Divisão de Shapley):</div>
+            <p>• <strong>45% ($10,800 USDC)</strong>: Cluster Builder Alpha (5 Carteiras no Surfpool)</p>
+            <p>• <strong>35% ($8,400 USDC)</strong>: Cluster Builder Beta (5 Carteiras no Surfpool)</p>
+            <p>• <strong>12% ($2,880 USDC)</strong>: Pool HaaS / A2H (8 Oráculos Humanos — 360 USDC/cada)</p>
+            <p>• <strong>8% ($1,920 USDC)</strong>: Infraestrutura Agêntica "a zer", Storage Neynar &amp; Gas SBT</p>
           </div>
         </div>
 
-        <!-- Exportador Multi-Plataforma (Questbook, KarmaHQ, Farcaster Frames, Bot CLI) -->
-        <div class="lg:col-span-5 space-y-3">
-          <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-white">📄 Exportador de Documento de Grant &amp; Bot Spec</span>
-              <span class="text-[11px] font-mono text-amber-400">1-Click Template</span>
-            </div>
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <button onclick="loadGrantTemplate('questbook')" class="py-2 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 font-semibold text-left">
-                📘 Questbook (DDA)
-              </button>
-              <button onclick="loadGrantTemplate('karmahq')" class="py-2 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 font-semibold text-left">
-                🛡️ KarmaHQ (GAP)
-              </button>
-              <button onclick="loadGrantTemplate('frames')" class="py-2 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 font-semibold text-left">
-                🟣 Farcaster Frames
-              </button>
-              <button onclick="loadGrantTemplate('bot')" class="py-2 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 font-semibold text-left">
-                🤖 Bot Command CLI
-              </button>
-            </div>
-            <textarea id="grantTemplatePreview" rows="6" class="w-full rounded-xl bg-slate-900 border border-slate-700 p-3 text-[11px] text-slate-200 font-mono focus:outline-none focus:border-cyan-400">[QUESTBOOK GRANT READY]
-Title: Maha Grid & The Embassy — Web4 H-A-H Coalition Sandbox
-Budget: $24,000 USDC (20% saved via Embassy Coalition Merger)
-M1 ($8k): H-A-H Engine + Omnichannel Mini-App (In/Out Farcaster)
-M2 ($9k): HaaS Marketplace + ERC-5192 Soulbound Attestations
-M3 ($7k): Multi-DAO Proposal Funnel + Nodespace Berlin Kit
-Full Doc: grants/03-questbook-grant-application.md</textarea>
-            <button onclick="copyGrantPreview()" class="w-full py-2 rounded-xl bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs transition">
-              📋 Copiar Modelo Selecionado
-            </button>
+        <div class="lg:col-span-5 bg-slate-950 border border-slate-800 rounded-xl p-4 space-y-2.5">
+          <div class="text-xs font-bold text-white">📄 Modelos Prontos (Grants &amp; Accountability)</div>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button onclick="loadGrantTemplate('questbook')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">📘 Questbook</button>
+            <button onclick="loadGrantTemplate('karmahq')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🛡️ KarmaHQ GAP</button>
+            <button onclick="loadGrantTemplate('frames')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🟣 Frames / DeFAI</button>
+            <button onclick="loadGrantTemplate('w3f')" class="py-1.5 px-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-600 text-left">🏦 W3F / OpenGov</button>
           </div>
+          <textarea id="grantTemplatePreview" rows="5" class="w-full rounded-lg bg-slate-900 border border-slate-700 p-2.5 text-[11px] text-slate-200 font-mono">Selecione acima para visualizar e copiar o template para Questbook, KarmaHQ GAP, Farcaster Frames ou W3F/OpenGov.</textarea>
+          <button onclick="copyGrantPreview()" class="w-full py-2 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold text-xs">📋 Copiar Documento</button>
         </div>
       </div>
     </section>
 
-    <!-- Tabuleiro 9x9 (81 Casas / 9 Ciclos) & Controles do Frame Diário -->
+    <!-- Tabuleiro 9x9 (81 Casas / 9 Ciclos) & Controles -->
     <section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
       <div class="lg:col-span-7 bg-slate-900/90 border border-slate-800 rounded-2xl p-5 shadow-xl">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
           <div>
             <h2 class="text-lg font-bold text-white">🎲 Tabuleiro Phygital Maha Grid (9 Ciclos / 81 Casas)</h2>
-            <p class="text-xs text-slate-400">Escadas (<span class="text-emerald-400 font-semibold">🪜 Coalizão H-A-H</span>) • Serpentes (<span class="text-rose-400 font-semibold">🐍 Captura</span>) • Zeladoria HaaS</p>
+            <p class="text-xs text-slate-400">Escadas (<span class="text-emerald-400 font-semibold">🪜 Coalizão H-A-H</span>) • Serpentes (<span class="text-rose-400 font-semibold">🐍 Captura</span>)</p>
           </div>
           <div class="text-xs font-mono bg-slate-950 px-3 py-1.5 rounded-lg border border-slate-800">
             Posição: <strong id="posBadge" class="text-amber-400">Casa 1</strong> (<span id="cycleBadge" class="text-emerald-400">Ciclo 1/9</span>)
           </div>
         </div>
-
         <div id="boardContainer" class="grid-board select-none"></div>
-
-        <div class="mt-4 pt-3 border-t border-slate-800/80 grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px] text-slate-300">
-          <div>🪜 <strong>04→16</strong>: Playtest Aberto</div>
-          <div>🪜 <strong>12→28</strong>: Auditoria cadCAD</div>
-          <div>🪜 <strong>21→42</strong>: Streaming Flows</div>
-          <div>🪜 <strong>33→53</strong>: Nodespace Berlim</div>
-          <div>🪜 <strong>48→67</strong>: Coalizão Embassy</div>
-          <div>🪜 <strong>62→78</strong>: Simbiose H-A-H</div>
-          <div class="text-rose-300">🐍 <strong>15→05</strong>: Kalindi (Mercenária)</div>
-          <div class="text-rose-300">🐍 <strong>29→11</strong>: Takshaka (Baleias)</div>
-          <div class="text-rose-300">🐍 <strong>44→25</strong>: Karkotaka (Apatia)</div>
-          <div class="text-rose-300">🐍 <strong>58→37</strong>: Vasuki (Drenagem)</div>
-          <div class="text-rose-300">🐍 <strong>71→49</strong>: Kaliya (Fork Hostil)</div>
-          <div class="text-rose-300">🐍 <strong>79→60</strong>: Shesha (Oráculo)</div>
-        </div>
       </div>
 
-      <!-- Painel do Frame Diário & Diário de Bordo Farcaster -->
-      <div class="lg:col-span-5 space-y-5">
+      <div class="lg:col-span-5 space-y-4">
         <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-4">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-mono uppercase tracking-wider text-amber-400">🎮 Mini-App Omnicanal • Frame Diário</span>
-            <span id="shieldStatus" class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">🛡️ Escudo H-A-H Ativo</span>
-          </div>
-
           <div class="grid grid-cols-2 gap-3">
-            <button onclick="rollDiceTurn()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-extrabold text-sm shadow-lg transition">
-              🎲 Lançar Dado D6 (Avançar)
+            <button onclick="rollDiceTurn()" class="py-3 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-slate-950 font-extrabold text-sm shadow-lg">
+              🎲 Lançar Dado D6
             </button>
-            <button onclick="drawCardMechanic()" class="py-3 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-600 transition">
-              🃏 Puxar Carta de Dilema
-            </button>
-          </div>
-
-          <div id="turnLog" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 font-mono leading-relaxed min-h-[76px]">
-            Pronto para iniciar a Jornada de 9 Ciclos! Funciona dentro do Farcaster (Frame v2) e fora dele (Standalone Web4 PWA).
-          </div>
-
-          <div id="sbtCard" class="p-3.5 rounded-xl bg-slate-950/90 border border-slate-800 flex items-center justify-between gap-3">
-            <div>
-              <div class="text-xs font-bold text-white">🪙 SBT: "Completei a Jornada de 9 Ciclos do Maha Grid"</div>
-              <div id="sbtSubtext" class="text-[11px] text-slate-400">Alcance a Casa 81 para cunhar seu Soulbound Token (ERC-5192) + Atestação KarmaHQ.</div>
-            </div>
-            <button onclick="instantJump81()" class="shrink-0 px-3 py-1.5 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 text-xs font-mono">
-              Simular Casa 81
+            <button onclick="instantJump81()" class="py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg">
+              🏆 Cunhar SBT (Casa 81)
             </button>
           </div>
-        </div>
-
-        <!-- Gerador de Cast / Post Omnicanal -->
-        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-3">
-          <div class="flex items-center justify-between">
-            <h3 class="text-sm font-bold text-white">📢 Diário de Bordo &amp; Comandos `@maha-embassy-bot`</h3>
-            <span class="text-[11px] font-mono text-purple-300">/web3 • /dao • /gaming • /build</span>
+          <div id="turnLog" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-200 font-mono min-h-[72px]">
+            APK Mobile &amp; Mini-App prontos! Interaja com o Cérebro "a zer" ou lance o dado D6.
           </div>
-          <textarea id="castComposer" rows="4" class="w-full rounded-xl bg-slate-950 border border-slate-800 p-3 text-xs text-slate-200 font-mono focus:outline-none focus:border-amber-500"></textarea>
-          <div class="flex gap-2">
-            <button onclick="copyCastText()" class="flex-1 py-2 px-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition">
-              📋 Copiar Cast / Post
-            </button>
-            <button onclick="resetBoard()" class="py-2 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-mono">
-              Reiniciar
-            </button>
-          </div>
+          <textarea id="castComposer" rows="3" class="w-full rounded-xl bg-slate-950 border border-slate-800 p-3 text-xs text-slate-200 font-mono"></textarea>
+          <button onclick="copyCastText()" class="w-full py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs">
+            📋 Copiar Cast do Bot "a zer"
+          </button>
         </div>
       </div>
     </section>
   </main>
 
   <script>
-    const LADDERS = {
-      4: { dest: 16, name: "Aliança de Playtest Aberto" },
-      12: { dest: 28, name: "Auditoria Comunitária cadCAD" },
-      21: { dest: 42, name: "Streaming Contínuo via Flows/Nouns" },
-      33: { dest: 53, name: "Consenso Político Nodespace Berlim" },
-      48: { dest: 67, name: "Coalizão Embassy H-A-H (Fundo Público)" },
-      62: { dest: 78, name: "Simbiose Humano-Agente Antifrágil" }
-    };
-
-    const SNAKES = {
-      15: { dest: 5, name: "Serpente Kalindi (Proposta Mercenária)" },
-      29: { dest: 11, name: "Serpente Takshaka (Captura por Baleias)" },
-      44: { dest: 25, name: "Serpente Karkotaka (Fadiga de Votação)" },
-      58: { dest: 37, name: "Serpente Vasuki (Drenagem de Tesouraria)" },
-      71: { dest: 49, name: "Serpente Kaliya (Fork Hostil)" },
-      79: { dest: 60, name: "Serpente Shesha (Centralização de Oráculo)" }
-    };
-
-    const DILEMMAS = [
-      "Carta #39 [Embassy H-A-H]: Dois AI Stewards fundiram propostas concorrentes no Questbook, economizando 20% da tesouraria! (+7.5 SBT, +22 DOT)",
-      "Carta #40 [HaaS Oráculo Humano]: 3 Zeladores Humanos desempataram dilema ético na Casa 58 e assinaram atestação no KarmaHQ GAP! (+9.0 SBT, +28 DOT)",
-      "Carta #41 [Nodespace Berlim]: Sessão presencial validou o baralho trilíngue (PT/EN/DE) com 6 delegados! (+8.0 SBT, +25 DOT)",
-      "Carta #42 [Bot Omnicanal]: Comando !coalition acionado via Farcaster e sincronizado no painel standalone Web4! (+6.5 SBT, +18 DOT)"
+    const AZER_MODULES = [
+      { id: "user", title: "👤 Usuário (User)", role: "L0", layer: "L0 Scout + L1 Envoy", desc: "Busca de Envoys, FIDs, Power Users (Whales), vínculo Ethereum/Solana (Surfpool 36 wallets), filtro por localização (Berlim), coleta de casts autoetnográficos e registro de conta.", endpoints: "• searchUser / fetchBulkUsers\n• fetchPowerUsers / fetchBulkUsersByEthOrSolAddress\n• lookupUserByUsername / byLocation\n• fetchCastsForUser / registerAccount / updateUserProfile" },
+      { id: "signer", title: "✍️ Signatário (Signer)", role: "L1", layer: "L1 Envoy + L2 Escriba", desc: "Delegação segura Neynar Managed Signer para o bot 'a zer' publicar sem risco de vazamento e Developer Managed Signer para Treaties L2.", endpoints: "• createSigner / registerSignedKey (Neynar Managed)\n• registerSignedKeyForDeveloperManagedSigner\n• fetchSigners (Auditoria da Embassy)" },
+      { id: "cast", title: "💬 Elenco (Cast)", role: "L1", layer: "L1 Envoy + L0 Scout", desc: "Extração de metadados de links (evidências GitHub), busca de casts ('grant', 'DAO', 'Maha Grid'), publicação de Treaties e leitura de árvores de conversa.", endpoints: "• lookupCastUrlMetadata / lookUpCastByHashOrWarpcastUrl\n• publishCast / deleteCast / searchCasts\n• lookupCastConversation / fetchComposerActions" },
+      { id: "feed", title: "📰 Alimentação (Feed)", role: "L0", layer: "L0 Scout Agent", desc: "Campo de observação etnográfica: feeds Following/For You, canais (/dao, /web3), filtro de casts com Mini Apps/Frames e Trending Feeds.", endpoints: "• fetchFeed / fetchFeedByChannelIds / byParentUrls\n• fetchFramesOnlyFeed (Casts com Mini Apps)\n• fetchTrendingFeed (Radar L0)" },
+      { id: "reaction", title: "👍 Reação (Reaction)", role: "L1", layer: "L1 Envoy + L2 Escriba", desc: "Postar/remover likes e recasts para sinalizar presença diplomática e medir engajamento de impacto.", endpoints: "• publishReaction / deleteReaction\n• fetchUserReactions / fetchCastReactions" },
+      { id: "notifications", title: "🔔 Notificações", role: "L1", layer: "L1 Envoy", desc: "Alertas de menções à Embassy ou novas propostas por canal e parent_url, com gestão de estado (mark as seen).", endpoints: "• fetchAllNotifications / byChannel / byParentUrls\n• markNotificationsAsSeen" },
+      { id: "channel", title: "📡 Canal (Diplomatic Desks)", role: "L1", layer: "L1 Envoy + L0 Scout", desc: "Gestão de membros, convites, seguidores relevantes e descoberta de canais em alta (/dao, /build, /gaming).", endpoints: "• lookupChannel / searchChannels / fetchChannelMembers\n• inviteToChannel / fetchRelevantFollowersForChannel\n• fetchTrendingChannels / followChannel" },
+      { id: "follows", title: "🔗 Segue (Grafo Social)", role: "L2", layer: "L2 Escriba (Network Science)", desc: "Mapeamento de seguidores, Relevant Followers e sugestões para expandir pontes estruturais da Embassy.", endpoints: "• fetchFollowers / fetchRelevantFollowers / fetchFollowing\n• fetchFollowSuggestions / followUser / unfollowUser" },
+      { id: "storage", title: "💾 Armazenamento (Storage)", role: "L3", layer: "L3 Treasury Admin", desc: "Monitoramento de alocação/uso e compra automática de unidades de storage para os casts e provas do bot 'a zer'.", endpoints: "• lookupUserStorageAllocations / lookupUserStorageUsage\n• buyStorage" },
+      { id: "frame", title: "🖼️ Quadro (Frame / Mini App)", role: "L2", layer: "Interface Maha Grid", desc: "Envio de notificações push via Frame, validação de Signature Packets, Frames hospedados na Neynar e catálogo de Mini Apps.", endpoints: "• publishFrameNotifications / validateFrameAction\n• createNeynarFrame / updateNeynarFrame\n• fetchMiniAppsCatalog / fetchFrameMetaTagsFromUrl" },
+      { id: "agents", title: "🤖 Agentes (Web4 & DeFAI)", role: "L2", layer: "L2 Escriba + L3 DeFAI", desc: "Resumo automático de conversas (Escriba L2), grafo de interações H-A-H e Dynamic Transaction Frames para staking/bounties no feed.", endpoints: "• fetchCastConversationSummary (Escriba L2)\n• fetchUserInteractions (Grafo H-A-H)\n• createDynamicTransactionFrame / getDynamicTransactionFrame" },
+      { id: "fname", title: "🆔 fname Registry", role: "L0", layer: "Identidade", desc: "Verificação instantânea de disponibilidade de nomes de usuário (@mahagrid, @azer).", endpoints: "• isFnameAvailable" },
+      { id: "webhook", title: "🪝 Webhook (Ouvidos do Bot)", role: "L0", layer: "L0 Scout Real-Time", desc: "Criação, atualização e auditoria de webhooks para escutar menções, casts e reações em tempo real.", endpoints: "• lookupWebhook / createWebhook / updateWebhook\n• updateWebhookActiveStatus / deleteWebhook" },
+      { id: "action", title: "⚡ Ação Cross-App", role: "L0", layer: "Telemetria", desc: "Rastreamento de interações de usuários entre diferentes aplicativos e Frames do ecossistema.", endpoints: "• fetchUserActionsAcrossApps" },
+      { id: "moderation", title: "🔇🚫⛔ Mute, Block & Ban", role: "L0", layer: "Defesa Anti-Sybil", desc: "Filtragem de ruído, bloqueio de assédio e banimento de contas Sybil/Nagas detectadas pelo filtro espectral.", endpoints: "• muteUser / blockUser / banUsersFromApp\n• fetchMuteList / fetchBlockedUsers / fetchBannedUsers" },
+      { id: "onchain", title: "⛓️🪙 Onchain, Hypersub & Fungibles", role: "L3", layer: "L3 Treasury & DeFAI", desc: "Leitura de saldos on-chain, checagem de assinaturas Hypersub (monetização do Escriba) e implantação de tokens fungíveis via API.", endpoints: "• fetchUserBalance / fetchRelevantOwners\n• fetchSubscribersForFid / checkHypersub\n• deployFungible (Treasury Agent Token Deploy)" },
+      { id: "login_metrics", title: "🔑📈 Login SIWF & Métricas", role: "L2", layer: "Auth & Prova de Impacto", desc: "Geração de Nonce para Sign In With Farcaster (SIWF) e extração de métricas de impacto de casts para relatórios de Grants.", endpoints: "• fetchNonce (SIWF Auth)\n• fetchCastMetrics (Impact Proof)" },
+      { id: "hub_api", title: "🏛️ Farcaster Hub API (12 Módulos)", role: "HUB", layer: "Protocolo Direto L4", desc: "Acesso direto ao Hub: Sync Info, Casts, Reactions, Links (Grafo), UserData, Appearance (FIDs), Storage, Usernames, Verifications, OnChainEvents, Messages e HubEvents.", endpoints: "• getInfo / getCastById / getReactionsByCast / getLinksByFid\n• getUserDataByFid / getFids / getUsernameProofsByFid\n• getVerificationsByFid / getOnChainEvents / submitMessage" }
     ];
 
-    const GRANT_TEMPLATES = {
-      questbook: `[QUESTBOOK GRANT APPLICATION — DDA MODEL]
-Project: Maha Grid & The Embassy (Web4 H-A-H Coalition Sandbox)
-Requested: $24,000 USDC (Saved 20% via Embassy H-A-H Merger)
-M1 ($8k): H-A-H Negotiation Engine + Omnichannel Mini-App (In/Out Farcaster)
-M2 ($9k): HaaS (Human-as-a-Service) Pool + ERC-5192 Soulbound Attestations
-M3 ($7k): Multi-DAO Proposal Exporter + Nodespace Berlin Phygital Kit
-Spec File: grants/03-questbook-grant-application.md`,
-      karmahq: `[KARMAHQ GAP — GRANTEE ACCOUNTABILITY PROTOCOL]
-Schema: karmahq.gap.v2.project_coalition
-Project UID: maha-grid-embassy-web4
-Stewardship: Dual Web4 (AI Steward + Human Steward HaaS Verified)
-Milestone 1: COMPLETED (simulations/maha_grid_sim.py + src/embassy_agent_engine.py)
-Attestation Contract: contracts/MahaGridSBT.sol (ERC-5192)
-Spec File: grants/04-karmahq-gap-profile-and-milestones.md`,
-      frames: `[FARCASTER FRAMES v2 / ROUNDS.WTF / BOUNTYCASTER]
-@bountycaster create
-🛎️ [HaaS Request — The Maha Embassy] Precisamos de 3 Zeladores Humanos (SBT >= 25) para auditar a coalizão #EMB-2027-01 na Casa 67 e assinar o parecer KarmaHQ.
-Recompensa: 120 USDC + 15 SBT
-Frame URL: https://compilatorum.github.io/maha-grid/
-Spec File: grants/05-farcaster-frames-grants-and-rounds.md`,
-      bot: `[@maha-embassy-bot — OMNICHANNEL COMMAND SPEC (IN & OUT FARCASTER)]
-1. !propose Criar simulador OpenGov | budget: 15000 USDC | track: questbook
-2. !coalition merge #PROP-01 #PROP-02 -> Calcula Shapley Split (45% / 35% / 12% HaaS / 8% Infra)
-3. !haas request Auditar playtest presencial em Berlim | bounty: 180 USDC
-4. !attest milestone 1 #EMB-2027-01 -> Publica no KarmaHQ GAP & cunha SBT
-Spec File: specs/02-omnifront-bot-and-miniapp-spec.md`
-    };
+    const LADDERS = { 4: { dest: 16, name: "Playtest Aberto" }, 12: { dest: 28, name: "Auditoria cadCAD" }, 21: { dest: 42, name: "Streaming Flows" }, 33: { dest: 53, name: "Nodespace Berlim" }, 48: { dest: 67, name: "Coalizão Embassy" }, 62: { dest: 78, name: "Simbiose H-A-H" } };
+    const SNAKES = { 15: { dest: 5, name: "Kalindi" }, 29: { dest: 11, name: "Takshaka" }, 44: { dest: 25, name: "Karkotaka" }, 58: { dest: 37, name: "Vasuki" }, 71: { dest: 49, name: "Kaliya" }, 79: { dest: 60, name: "Shesha" } };
 
     let playerPos = 1;
     let sbtRep = 35.0;
-    let treasury = 1458.5;
-    let cardsDrawn = 38;
-    let isFarcasterMode = Boolean(window.farcaster || window.parent !== window);
+    let selectedMod = AZER_MODULES[10];
 
-    function toggleRuntimeMode() {
-      isFarcasterMode = !isFarcasterMode;
-      const badge = document.getElementById("runtimeBadge");
-      if (isFarcasterMode) {
-        badge.textContent = "🟣 Runtime: Farcaster Mini App (fc:frame v2)";
-        badge.className = "cursor-pointer text-xs font-mono px-2.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/40";
-      } else {
-        badge.textContent = "🌐 Runtime: Standalone Web4 PWA (Fora do Farcaster)";
-        badge.className = "cursor-pointer text-xs font-mono px-2.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/40";
-      }
+    function renderAzerModules(filter = "ALL") {
+      const grid = document.getElementById("azerModulesGrid");
+      grid.innerHTML = "";
+      AZER_MODULES.filter(m => filter === "ALL" || m.role === filter).forEach(m => {
+        const btn = document.createElement("button");
+        btn.className = "p-3 rounded-xl bg-slate-950 hover:bg-slate-900 border border-slate-800 hover:border-purple-500/50 text-left transition flex flex-col justify-between";
+        btn.onclick = () => selectAzerModule(m);
+        btn.innerHTML = `
+          <div class="text-xs font-bold text-white">${m.title}</div>
+          <div class="text-[10px] font-mono text-purple-300 mt-1">${m.layer}</div>
+        `;
+        grid.appendChild(btn);
+      });
     }
 
-    function runEmbassyNegotiation() {
-      playerPos = 67;
-      sbtRep += 20.0;
-      treasury += 45.0;
-      document.getElementById("turnLog").textContent =
-        "🏛️ EMBASSY H-A-H: Agentes Alpha e Beta selaram coalizão na Casa 67 (Ciclo 8)! Orçamento otimizado em -20% ($24,000 USDC) e Shapley Split assinado (+20 SBT).";
+    function selectAzerModule(m) {
+      selectedMod = m;
+      document.getElementById("azerSelectedCategory").textContent = m.title;
+      document.getElementById("azerSelectedLayer").textContent = m.layer;
+      document.getElementById("azerSelectedDesc").textContent = m.desc;
+      document.getElementById("azerEndpointList").textContent = m.endpoints;
+    }
+
+    function filterAzerRole(role) {
+      renderAzerModules(role);
+    }
+
+    function executeAzerModuleAction() {
+      sbtRep += 4.0;
+      document.getElementById("azerExecOutput").textContent =
+        `✅ [Bot "a zer" • ${selectedMod.title}] Executado com sucesso! Telemetria sincronizada com a Embassy e grafo Surfpool (+4.0 SBT).`;
       renderBoard();
-    }
-
-    function dispatchHaasTask() {
-      sbtRep += 15.0;
-      treasury += 12.0;
-      document.getElementById("turnLog").textContent =
-        "🛎️ HaaS (Human-as-a-Service): Tarefa #HAAS-2027-01 concluída por Zelador Humano! Dilema ético arbitrado e registrado no KarmaHQ GAP (+120 USDC / +15 SBT).";
-      renderBoard();
-    }
-
-    function loadGrantTemplate(key) {
-      document.getElementById("grantTemplatePreview").value = GRANT_TEMPLATES[key] || GRANT_TEMPLATES.questbook;
-    }
-
-    function copyGrantPreview() {
-      const el = document.getElementById("grantTemplatePreview");
-      navigator.clipboard.writeText(el.value);
-      document.getElementById("turnLog").textContent = "📋 Modelo de documento (Questbook/KarmaHQ/Frames/Bot) copiado para a área de transferência!";
     }
 
     function renderBoard() {
@@ -382,118 +295,78 @@ Spec File: specs/02-omnifront-bot-and-miniapp-spec.md`
           const actualCol = isEvenRow ? col : (8 - col);
           const sq = row * 9 + actualCol + 1;
           const cell = document.createElement("div");
-          let classes = "h-12 sm:h-14 rounded-lg border border-slate-800 bg-slate-950/80 p-1 flex flex-col justify-between text-[10px] font-mono transition relative ";
+          let classes = "h-11 sm:h-13 rounded-lg border border-slate-800 bg-slate-950/80 p-1 flex flex-col justify-between text-[10px] font-mono ";
           if (LADDERS[sq]) classes += "cell-ladder ";
           if (SNAKES[sq]) classes += "cell-snake ";
           if (sq === playerPos) classes += "cell-active ";
-
-          let icon = "";
-          if (LADDERS[sq]) icon = `🪜→${LADDERS[sq].dest}`;
-          else if (SNAKES[sq]) icon = `🐍→${SNAKES[sq].dest}`;
-          else if (sq === 81) icon = "🏆SBT";
-
+          let icon = LADDERS[sq] ? `🪜→${LADDERS[sq].dest}` : (SNAKES[sq] ? `🐍→${SNAKES[sq].dest}` : (sq === 81 ? "🏆SBT" : ""));
           cell.className = classes;
-          cell.innerHTML = `
-            <div class="flex justify-between items-center">
-              <span class="font-bold ${sq === playerPos ? 'text-amber-300' : 'text-slate-400'}">${sq}</span>
-              <span class="text-[9px]">${icon}</span>
-            </div>
-            <div class="text-right text-xs">${sq === playerPos ? '🧑‍🚀🤖' : ''}</div>
-          `;
+          cell.innerHTML = `<div class="flex justify-between"><span>${sq}</span><span class="text-[8px]">${icon}</span></div><div class="text-right">${sq === playerPos ? '🛰️' : ''}</div>`;
           container.appendChild(cell);
         }
       }
-
       const cycle = Math.floor((playerPos - 1) / 9) + 1;
       document.getElementById("posBadge").textContent = `Casa ${playerPos}`;
       document.getElementById("cycleBadge").textContent = `Ciclo ${cycle}/9`;
       document.getElementById("sbtScore").textContent = sbtRep.toFixed(1);
-      document.getElementById("treasuryVal").textContent = `${treasury.toFixed(1)} DOT`;
-      document.getElementById("cardsCounter").textContent = `${cardsDrawn} / 54`;
-      updateCastComposer(cycle);
-    }
-
-    function updateCastComposer(cycle) {
-      const sbtTag = playerPos === 81 ? "✅ SBT 9 Ciclos Cunhado (ERC-5192)!" : `Casa ${playerPos}/81 (Ciclo ${cycle}/9)`;
       document.getElementById("castComposer").value =
-        `🏛️🐍 Maha Grid & The Embassy (Web4 H-A-H & HaaS): ${sbtTag}\n` +
-        `🤝 Coalizão DAO otimizada (-20% budget) | 🛡️ SBT: ${sbtRep.toFixed(1)} | 🏦 Tesouraria: ${treasury.toFixed(1)} DOT\n` +
-        `Pronto p/ Questbook, KarmaHQ GAP, @web3foundation @polkadot @flows /build /dao`;
+        `🛰️🐍 Crônica do Bot Etnógrafo "a zer" (Neynar V2 + Surfpool): Casa ${playerPos}/81 (Ciclo ${cycle}/9) | SBT: ${sbtRep.toFixed(1)} | Fiedler λ₂: 1.1512 ⟡ /dao /build`;
     }
 
     function rollDiceTurn() {
-      if (playerPos >= 81) {
-        document.getElementById("turnLog").textContent = "🏆 Jornada de 9 Ciclos completa na Casa 81! Clique em Reiniciar para novo episódio.";
-        return;
-      }
       const d6 = Math.floor(Math.random() * 6) + 1;
       let next = Math.min(81, playerPos + d6);
-      let msg = `🎲 Dado D6 = ${d6}! Avançou da Casa ${playerPos} para a Casa ${next}. `;
-
-      if (LADDERS[next]) {
-        const info = LADDERS[next];
-        msg += `🪜 ESCADA H-A-H (${info.name})! Subiu para a Casa ${info.dest} (+15 SBT).`;
-        next = info.dest;
-        sbtRep += 15;
-        treasury += 24;
-      } else if (SNAKES[next]) {
-        const info = SNAKES[next];
-        if (sbtRep >= 25) {
-          msg += `🛡️ ESCUDO DE COALIZÃO + HaaS! Neutralizou a ${info.name} na Casa ${next}!`;
-          sbtRep -= 8;
-        } else {
-          msg += `🐍 CAIU EM ${info.name}! Regrediu para a Casa ${info.dest} (-6 SBT).`;
-          next = info.dest;
-          sbtRep = Math.max(5, sbtRep - 6);
-        }
-      } else {
-        sbtRep += 2.5;
-        treasury += 8.5;
-      }
-
+      if (LADDERS[next]) { next = LADDERS[next].dest; sbtRep += 15; }
+      else if (SNAKES[next] && sbtRep < 25) { next = SNAKES[next].dest; }
       playerPos = next;
-      if (playerPos === 81) {
-        sbtRep += 50;
-        msg += " 🏆 CASA 81 ALCANÇADA! SBT 'Completei a Jornada de 9 Ciclos do Maha Grid' cunhado + Atestação KarmaHQ GAP!";
-        document.getElementById("sbtSubtext").innerHTML = "<strong class='text-emerald-400'>✅ CUNHADO ON-CHAIN (ERC-5192 + KarmaHQ Attested)!</strong>";
-      }
-
-      document.getElementById("turnLog").textContent = msg;
-      renderBoard();
-    }
-
-    function drawCardMechanic() {
-      cardsDrawn = Math.min(54, cardsDrawn + 1);
-      const card = DILEMMAS[cardsDrawn % DILEMMAS.length];
-      sbtRep += 7.5;
-      treasury += 20.0;
-      document.getElementById("turnLog").textContent = `🃏 ${card}`;
+      document.getElementById("turnLog").textContent = `🎲 Bot "a zer" lançou D6 = ${d6} -> Posição atual: Casa ${playerPos}.`;
       renderBoard();
     }
 
     function instantJump81() {
       playerPos = 81;
-      sbtRep += 50.0;
-      document.getElementById("sbtSubtext").innerHTML = "<strong class='text-emerald-400'>✅ CUNHADO ON-CHAIN (ERC-5192 + KarmaHQ Attested)!</strong>";
-      document.getElementById("turnLog").textContent = "🏆 Casa 81 (Ciclo 9)! SBT 'Completei a Jornada de 9 Ciclos do Maha Grid' emitido para Humanos e AI Stewards.";
+      sbtRep += 50;
+      document.getElementById("turnLog").textContent = "🏆 Casa 81! SBT 'Completei a Jornada de 9 Ciclos do Maha Grid' cunhado via Dynamic Transaction Frame!";
       renderBoard();
     }
 
-    function resetBoard() {
-      playerPos = 1;
-      sbtRep = 35.0;
-      treasury = 1458.5;
-      document.getElementById("sbtSubtext").textContent = "Alcance a Casa 81 para cunhar seu Soulbound Token (ERC-5192) + Atestação KarmaHQ.";
-      document.getElementById("turnLog").textContent = "Tabuleiro reiniciado na Casa 1 (Ciclo 1).";
+    function runEmbassyNegotiation() {
+      playerPos = 67;
+      sbtRep += 20;
+      document.getElementById("turnLog").textContent = "🤝 Pacto H-A-H selado na Casa 67 pelo bot 'a zer'! Orçamento otimizado em -20% ($24,000 USDC).";
       renderBoard();
+    }
+
+    function dispatchHaasTask() {
+      sbtRep += 15;
+      document.getElementById("turnLog").textContent = "🛎️ Tarefa A2H/HaaS liquidada na malha Surfpool (+120 USDC / +15 SBT).";
+      renderBoard();
+    }
+
+    function loadGrantTemplate(type) {
+      const map = {
+        questbook: "[QUESTBOOK DDA] Maha Grid & Bot 'a zer' — $24,000 USDC (3 Milestones, KarmaHQ GAP Verified). Veja grants/03-questbook-grant-application.md",
+        karmahq: "[KARMAHQ GAP] Schema karmahq.gap.v2 — 36 Carteiras Surfpool Auditadas + SBT ERC-5192. Veja grants/04-karmahq-gap-profile-and-milestones.md",
+        frames: "[FARCASTER FRAMES V2 & DEFAI] Dynamic Transaction Frames + Bot 'a zer' (Neynar V2). Veja grants/05-farcaster-frames-grants-and-rounds.md",
+        w3f: "[W3F & POLKADOT OPENGOV] Simulação cadCAD/TokenSpice + Nodespace Berlim 2027. Veja grants/01-web3-foundation-polkadot.md"
+      };
+      document.getElementById("grantTemplatePreview").value = map[type] || map.questbook;
+    }
+
+    function copyGrantPreview() {
+      navigator.clipboard.writeText(document.getElementById("grantTemplatePreview").value);
     }
 
     function copyCastText() {
-      const el = document.getElementById("castComposer");
-      navigator.clipboard.writeText(el.value);
-      document.getElementById("turnLog").textContent = "📋 Post copiado para Farcaster / X / Telegram / Discord!";
+      navigator.clipboard.writeText(document.getElementById("castComposer").value);
     }
 
+    function toggleRuntimeMode() {
+      const b = document.getElementById("runtimeBadge");
+      b.textContent = b.textContent.includes("APK") ? "🟣 Runtime: Farcaster Frame V2 (Neynar)" : "📱 APK Android / Farcaster V2 / Web4";
+    }
+
+    renderAzerModules("ALL");
     renderBoard();
   </script>
 </body>
